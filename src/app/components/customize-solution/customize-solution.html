@@ -1,4 +1,5 @@
 <!-- Budget Form Section with FormBuilder -->
+<!--
 <section
   id="solucoes"
   class="customize-solution"
@@ -31,7 +32,7 @@
       </p>
     </header>
 
-    <!-- Selected Counter -->
+  
     @if (selectedCount > 0) {
       <div class="selected-counter">
         <svg
@@ -53,7 +54,7 @@
       </div>
     }
 
-    <!-- Options Grid -->
+  
     <div class="options-grid">
       @for (option of options; track option.id) {
         <div
@@ -247,7 +248,7 @@
       }
     </div>
 
-    <!-- CTA -->
+   
     @if (selectedCount > 0) {
       <div class="cta-customize">
         <h3>
@@ -260,7 +261,7 @@
       </div>
     }
 
-    <!-- Budget Form -->
+   
     <div class="budget-form-section">
       <div class="form-header">
         <h3>Personalize seu Orçamento</h3>
@@ -427,9 +428,9 @@
       </div>
     </div>
   </div>
-</section>
+</section> 
 
-<!-- Modal -->
+
 @if (showModal) {
   <div class="modal-overlay" (click)="closeModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">
@@ -550,4 +551,4 @@
       </form>
     </div>
   </div>
-}
+} -->
