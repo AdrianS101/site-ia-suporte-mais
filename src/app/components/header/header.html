@@ -1,0 +1,31 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="IA ATENDE MAIS" />
+    </div>
+
+    <button
+      class="mobile-menu-toggle"
+      (click)="toggleMobileMenu()"
+      [class.open]="isMobileMenuOpen"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" [class.mobile-open]="isMobileMenuOpen">
+      <a href="#" (click)="closeMobileMenu()">Home</a>
+      <a href="#sentiment" (click)="closeMobileMenu()">Análise IA</a>
+      <a href="#teams" (click)="closeMobileMenu()">Times</a>
+      <a href="#campaigns" (click)="closeMobileMenu()">Campanhas</a>
+      <a href="#chat-demo" (click)="closeMobileMenu()">Chat Demo</a>
+      <a href="#workflow" (click)="closeMobileMenu()">Workflows</a>
+      <a href="#follow-up" (click)="closeMobileMenu()">Follow-up</a>
+      <a href="#solucoes" (click)="closeMobileMenu()">Soluções</a>
+      <a href="https://wa.me/5511935359586" class="btn-outline-white"
+        >Fale Conosco</a
+      >
+    </nav>
+  </div>
+</header>

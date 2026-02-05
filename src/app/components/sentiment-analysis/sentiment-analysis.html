@@ -1,0 +1,151 @@
+<section class="sentiment-analysis" id="sentiment">
+  <div class="container">
+    <div class="content">
+      <div class="text-content">
+        <span class="label">Inteligência Emocional</span>
+        <h2>Análise de Sentimento em Tempo Real</h2>
+        <p class="description">
+          A IA ATENDE MAIS analisa automaticamente o sentimento de cada
+          mensagem, identificando emoções positivas, neutras ou negativas. Isso
+          permite que sua equipe priorize atendimentos críticos e responda de
+          forma mais empática.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-card positive">
+            <div class="stat-icon">😊</div>
+            <div class="stat-info">
+              <div class="stat-value">{{ stats.positive }}%</div>
+              <div class="stat-label">Positivos</div>
+            </div>
+          </div>
+
+          <div class="stat-card neutral">
+            <div class="stat-icon">😐</div>
+            <div class="stat-info">
+              <div class="stat-value">{{ stats.neutral }}%</div>
+              <div class="stat-label">Neutros</div>
+            </div>
+          </div>
+
+          <div class="stat-card negative">
+            <div class="stat-icon">😟</div>
+            <div class="stat-info">
+              <div class="stat-value">{{ stats.negative }}%</div>
+              <div class="stat-label">Negativos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-list">
+          <div class="feature-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.6667 5L7.50004 14.1667L3.33337 10"
+                stroke="#10b981"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Detecção automática de urgências</span>
+          </div>
+          <div class="feature-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.6667 5L7.50004 14.1667L3.33337 10"
+                stroke="#10b981"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Priorização inteligente de tickets</span>
+          </div>
+          <div class="feature-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.6667 5L7.50004 14.1667L3.33337 10"
+                stroke="#10b981"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Insights sobre satisfação do cliente</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-content">
+        <div class="messages-container">
+          <div class="messages-header">
+            <h3>Análise em Tempo Real</h3>
+            <span class="badge">IA ATENDE MAIS</span>
+          </div>
+
+          <div class="messages-list">
+            <div
+              *ngFor="let message of messages"
+              class="message-card"
+              [class.visible]="message.visible"
+              [attr.data-sentiment]="message.sentiment"
+            >
+              <div class="message-content">
+                <p>{{ message.text }}</p>
+              </div>
+
+              <div class="sentiment-indicator">
+                <div
+                  class="sentiment-badge"
+                  [style.background]="getSentimentColor(message.sentiment)"
+                >
+                  <span class="sentiment-icon">{{
+                    getSentimentIcon(message.sentiment)
+                  }}</span>
+                  <span class="sentiment-label">
+                    {{
+                      message.sentiment === "positive"
+                        ? "Positivo"
+                        : message.sentiment === "neutral"
+                          ? "Neutro"
+                          : "Negativo"
+                    }}
+                  </span>
+                </div>
+                <div class="sentiment-score">
+                  <div class="score-bar">
+                    <div
+                      class="score-fill"
+                      [style.width.%]="message.score"
+                      [style.background]="getSentimentColor(message.sentiment)"
+                    ></div>
+                  </div>
+                  <span class="score-value">{{ message.score }}%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

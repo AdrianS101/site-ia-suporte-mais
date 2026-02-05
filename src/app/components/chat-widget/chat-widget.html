@@ -1,0 +1,189 @@
+<!-- Chat Button -->
+<button
+  class="chat-button"
+  (click)="toggleChat()"
+  *ngIf="!isOpen"
+  aria-label="Abrir chat"
+>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path
+      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+    ></path>
+  </svg>
+  <span class="notification-badge">1</span>
+</button>
+
+<!-- Chat Window -->
+<div class="chat-widget" *ngIf="isOpen" [class.minimized]="isMinimized">
+  <!-- Header -->
+  <div class="chat-header">
+    <div class="agent-info">
+      <div class="agent-avatar">
+        <span>🤖</span>
+        <div class="status-indicator"></div>
+      </div>
+      <div class="agent-details">
+        <h3>IA ATENDE MAIS</h3>
+        <span class="status-text">Online</span>
+      </div>
+    </div>
+    <div class="chat-actions">
+      <button (click)="minimizeChat()" aria-label="Minimizar chat">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </button>
+      <button (click)="closeChat()" aria-label="Fechar chat">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="chat-contact-form" *ngIf="!isMinimized && showContactForm">
+    <div class="form-header">
+      <h4>Bem-vindo ao IA ATENDE MAIS!</h4>
+      <p>Para começar, precisamos de algumas informações:</p>
+    </div>
+    <form (ngSubmit)="submitContactForm()">
+      <div class="form-group">
+        <label for="userName">Nome</label>
+        <input
+          type="text"
+          id="userName"
+          [(ngModel)]="userName"
+          name="userName"
+          placeholder="Digite seu nome"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="userEmail">E-mail</label>
+        <input
+          type="email"
+          id="userEmail"
+          [(ngModel)]="userEmail"
+          name="userEmail"
+          placeholder="seu@email.com"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="userPhone">Telefone</label>
+        <input
+          type="tel"
+          id="userPhone"
+          [(ngModel)]="userPhone"
+          name="userPhone"
+          placeholder="(00) 00000-0000"
+          mask="(00) 00000-0000||(00) 0000-0000"
+          [showMaskTyped]="true"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="submit-button"
+        [disabled]="
+          !userName.trim() ||
+          !userEmail.trim() ||
+          !userPhone.trim() ||
+          isSubmittingContact
+        "
+      >
+        <span *ngIf="!isSubmittingContact">Iniciar Conversa</span>
+        <span *ngIf="isSubmittingContact">Conectando...</span>
+      </button>
+    </form>
+  </div>
+
+  <!-- Messages -->
+  <div
+    class="chat-messages"
+    *ngIf="!isMinimized && !showContactForm"
+    #chatMessages
+  >
+    <div
+      *ngFor="let message of messages"
+      class="message"
+      [class.user-message]="message.sender === 'user'"
+      [class.agent-message]="message.sender === 'agent'"
+    >
+      <div class="message-bubble">
+        <div
+          *ngIf="message.sender === 'agent' && message.htmlContent"
+          class="markdown-content"
+        >
+          <span [innerHTML]="message.htmlContent"></span>
+          <span *ngIf="message.isTyping" class="typing-cursor">|</span>
+        </div>
+        <p *ngIf="message.sender === 'user' || !message.htmlContent">
+          {{ message.text }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div class="message agent-message" *ngIf="isTyping">
+      <div class="message-bubble typing">
+        <div class="typing-indicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="chat-input" *ngIf="!isMinimized && !showContactForm">
+    <input
+      type="text"
+      [(ngModel)]="newMessage"
+      (keypress)="handleKeyPress($event)"
+      placeholder="Digite sua mensagem..."
+      aria-label="Campo de mensagem"
+    />
+    <button
+      (click)="sendMessage()"
+      [disabled]="!newMessage.trim()"
+      aria-label="Enviar mensagem"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>

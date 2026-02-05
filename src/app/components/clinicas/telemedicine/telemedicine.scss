@@ -1,0 +1,681 @@
+.telemedicine {
+  padding: 80px 24px;
+  background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    .header-content {
+      .video-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+        color: white;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+        box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+        animation: pulse-badge 2s ease-in-out infinite;
+
+        .recording-dot {
+          width: 8px;
+          height: 8px;
+          background: white;
+          border-radius: 50%;
+          animation: recording-pulse 1.5s ease-in-out infinite;
+        }
+      }
+
+      h2 {
+        font-size: 42px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 16px 0;
+        background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      p {
+        font-size: 18px;
+        color: #64748b;
+        margin: 0;
+      }
+    }
+  }
+
+
+  .video-interface {
+    background: #0f172a;
+    border-radius: 24px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeInScale 0.8s ease-out;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.connecting {
+      .video-grid {
+        opacity: 0.6;
+        filter: blur(4px);
+      }
+    }
+
+    &.connected {
+      .video-grid {
+        animation: videoConnect 0.5s ease-out;
+      }
+    }
+
+    .video-grid {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: all 0.5s ease;
+
+      .video-participant {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+
+        &.doctor-video {
+          width: 100%;
+          height: 500px;
+
+          .video-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            .avatar-large {
+              font-size: 120px;
+              width: 200px;
+              height: 200px;
+              background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 10px 40px rgba(14, 165, 233, 0.4);
+              animation: float 3s ease-in-out infinite;
+            }
+
+            .participant-name {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 8px;
+
+              .name {
+                font-size: 24px;
+                font-weight: 700;
+                color: white;
+              }
+
+              .role {
+                font-size: 14px;
+                color: #94a3b8;
+                font-weight: 500;
+              }
+            }
+          }
+
+          .video-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+
+            .participant-badge {
+              background: rgba(0, 0, 0, 0.7);
+              backdrop-filter: blur(10px);
+              padding: 10px 16px;
+              border-radius: 10px;
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              color: white;
+              font-size: 14px;
+              font-weight: 600;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+
+              .mic-icon {
+                font-size: 16px;
+                animation: micPulse 2s ease-in-out infinite;
+              }
+            }
+          }
+        }
+
+        &.patient-video {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          width: 180px;
+          height: 135px;
+          border: 3px solid rgba(14, 165, 233, 0.5);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+          animation: slideInBottomRight 0.5s ease-out 0.5s both;
+
+          .video-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #475569 0%, #64748b 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .avatar-small {
+              font-size: 48px;
+            }
+          }
+
+          .video-overlay {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+
+            .mic-icon-small {
+              font-size: 12px;
+              background: rgba(0, 0, 0, 0.7);
+              padding: 6px;
+              border-radius: 6px;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+
+    .call-status-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+
+      .connecting-spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(14, 165, 233, 0.2);
+        border-top-color: #0ea5e9;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+
+      .connecting-text {
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+        animation: pulse-text 1.5s ease-in-out infinite;
+      }
+    }
+
+    .call-controls {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: slideInBottom 0.5s ease-out 1s both;
+
+      .controls-left,
+      .controls-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .connection-indicator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 8px 14px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .quality-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          animation: pulse-quality 2s ease-in-out infinite;
+        }
+
+        .quality-text {
+          color: white;
+          font-size: 13px;
+          font-weight: 600;
+        }
+      }
+
+      .call-duration {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 8px 14px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .duration-icon {
+          font-size: 14px;
+        }
+      }
+
+      .controls-center {
+        display: flex;
+        gap: 12px;
+      }
+
+      .control-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        font-size: 20px;
+
+        &.btn-primary {
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.1);
+          }
+        }
+
+        &.btn-danger {
+          background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+          box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+
+          &:hover {
+            transform: scale(1.1) rotate(135deg);
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6);
+          }
+        }
+
+        &.btn-secondary {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.15);
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+          }
+        }
+
+        .btn-icon {
+          font-size: 20px;
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+      }
+    }
+  }
+
+  .features-list {
+    max-width: 800px;
+    margin: 50px auto 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 40px;
+
+    .feature-item {
+      animation: fadeInUp 0.6s ease-out both;
+
+      .feature-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 8px;
+      }
+
+      .feature-description {
+        font-size: 14px;
+        color: #64748b;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 12px 32px rgba(14, 165, 233, 0.3);
+    animation: fadeInUp 0.6s ease-out 0.5s both;
+
+    .cta-content {
+      h3 {
+        font-size: 28px;
+        font-weight: 700;
+        color: white;
+        margin: 0 0 8px 0;
+      }
+
+      p {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0;
+      }
+    }
+
+    .cta-button {
+      background: white;
+      color: #0ea5e9;
+      border: none;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+
+      &:hover {
+        transform: translateX(4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      svg {
+        transition: transform 0.3s ease;
+      }
+
+      &:hover svg {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInBottomRight {
+  from {
+    opacity: 0;
+    transform: translate(30px, 30px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes recording-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes pulse-quality {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes pulse-text {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes videoConnect {
+  0% {
+    opacity: 0.6;
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes micPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+// Responsive
+@media (max-width: 968px) {
+  .telemedicine {
+    padding: 60px 20px;
+
+    .section-header {
+      margin-bottom: 40px;
+
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .video-interface {
+      min-height: 400px;
+
+      .video-grid {
+        .video-participant {
+          &.doctor-video {
+            height: 400px;
+
+            .video-placeholder {
+              .avatar-large {
+                font-size: 80px;
+                width: 150px;
+                height: 150px;
+              }
+
+              .participant-name {
+                .name {
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+
+          &.patient-video {
+            width: 120px;
+            height: 90px;
+            bottom: 15px;
+            right: 15px;
+
+            .video-placeholder {
+              .avatar-small {
+                font-size: 32px;
+              }
+            }
+          }
+        }
+      }
+
+      .call-controls {
+        padding: 20px 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+
+        .controls-left,
+        .controls-right {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .controls-center {
+          gap: 8px;
+        }
+
+        .control-btn {
+          width: 45px;
+          height: 45px;
+
+          .btn-icon {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .features-list {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .cta-box {
+      flex-direction: column;
+      gap: 24px;
+      text-align: center;
+
+      .cta-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

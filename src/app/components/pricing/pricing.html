@@ -1,0 +1,88 @@
+<section id="planos" class="pricing" aria-labelledby="pricing-title">
+  <div class="container">
+    <header class="section-header">
+      <div class="section-tag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        Planos
+      </div>
+      <h2 id="pricing-title" class="section-title">Escolha o Plano Ideal</h2>
+      <p class="section-subtitle">
+        Soluções flexíveis para atender empresas de todos os tamanhos
+      </p>
+
+      <!-- Billing Toggle -->
+      <div class="billing-toggle">
+        <button
+          class="toggle-option"
+          [class.active]="billingCycle === 'monthly'"
+          (click)="toggleBillingCycle('monthly')">
+          Mensal
+        </button>
+        <button
+          class="toggle-option"
+          [class.active]="billingCycle === 'yearly'"
+          (click)="toggleBillingCycle('yearly')">
+          Anual
+          <span class="discount-badge">-20%</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="pricing-grid">
+      @for (plan of plans; track plan.id) {
+        <div class="pricing-card" [class.featured]="plan.featured">
+          @if (plan.featured) {
+            <div class="featured-badge">Mais Popular</div>
+          }
+
+          <div class="plan-header">
+            <h3 class="plan-name">{{ plan.name }}</h3>
+            @if (plan.conversations) {
+              <div class="plan-conversations">
+                <span class="conversations-number">{{ plan.conversations }}</span>
+                <span class="conversations-label">conversas mensais</span>
+              </div>
+            }
+            @if (plan.price) {
+              <div class="plan-price">
+                <span class="currency">R$</span>
+                <span class="amount">{{ getPrice(plan.price) }}</span>
+                <span class="period">/mês</span>
+              </div>
+              @if (billingCycle === 'yearly') {
+                <div class="savings-info">
+                  Economize R$ {{ getSavings(plan.price) }}/mês
+                </div>
+              }
+            } @else {
+              <div class="plan-custom">
+                <span class="custom-text">Personalizado</span>
+              </div>
+            }
+            <p class="plan-description">{{ plan.description }}</p>
+          </div>
+
+          <ul class="plan-features">
+            @for (feature of plan.features; track feature) {
+              <li class="feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>{{ feature }}</span>
+              </li>
+            }
+          </ul>
+
+          <button class="plan-button" [class.featured-button]="plan.featured" (click)="selectPlan(plan)">
+            {{ plan.buttonText }}
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+</section>

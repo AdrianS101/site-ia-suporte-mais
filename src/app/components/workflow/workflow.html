@@ -1,0 +1,293 @@
+<section id="workflow" class="workflow" aria-labelledby="workflow-title">
+  <!-- Decorative elements -->
+  <div class="workflow-decorations">
+    <div class="decoration-circle decoration-1"></div>
+    <div class="decoration-circle decoration-2"></div>
+    <div class="decoration-circle decoration-3"></div>
+    <div class="decoration-line decoration-line-1"></div>
+    <div class="decoration-line decoration-line-2"></div>
+  </div>
+
+  <div class="container">
+    <header class="section-header">
+      <div class="section-tag">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path
+            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+          ></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        Automação de Workflows
+      </div>
+      <h2 id="workflow-title" class="section-title">
+        Fluxos de Automação Visuais
+      </h2>
+      <p class="section-subtitle">
+        Construa workflows complexos arrastando e conectando nós. Automatize
+        processos inteiros de vendas, atendimento e gestão.
+      </p>
+    </header>
+
+    <div class="workflow-demo">
+      <!-- Workflow Canvas -->
+      <div class="workflow-canvas">
+        <div class="workflow-header">
+          <span class="workflow-name">Fluxo de Conversão</span>
+          <span class="workflow-status active">
+            <span class="status-dot"></span>
+            Ativo
+          </span>
+        </div>
+
+        <div class="flow-builder">
+          <!-- Flow Nodes -->
+          <div class="flow-nodes">
+            <!-- Node 1: Landing Page -->
+            <div class="flow-node" style="left: 20px; top: 50px">
+              <div class="node-header blue">
+                <div class="node-icon-small">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect
+                      x="3"
+                      y="3"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="9" y1="9" x2="15" y2="9"></line>
+                    <line x1="9" y1="15" x2="15" y2="15"></line>
+                  </svg>
+                </div>
+                <h4 class="node-title-small">Landing Page</h4>
+              </div>
+              <div class="node-body">
+                <p class="node-label">Trigger</p>
+                <p class="node-value">form_submit</p>
+              </div>
+              <!-- Connection point right -->
+              <div class="connection-point right"></div>
+            </div>
+
+            <!-- Connection Line 1 -->
+            <div
+              class="connection-line-wrapper"
+              style="left: 200px; top: 103px"
+            >
+              <div class="connection-line gradient-blue-purple"></div>
+            </div>
+
+            <!-- Node 2: Webhook -->
+            <div class="flow-node" style="left: 280px; top: 50px">
+              <div class="node-header purple">
+                <div class="node-icon-small">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                    ></path>
+                    <path
+                      d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                    ></path>
+                  </svg>
+                </div>
+                <h4 class="node-title-small">Webhook</h4>
+              </div>
+              <div class="node-body">
+                <p class="node-label">Endpoint</p>
+                <p class="node-value">/api/webhook/lead</p>
+              </div>
+              <!-- Connection points -->
+              <div class="connection-point left"></div>
+              <div class="connection-point right"></div>
+            </div>
+
+            <!-- Connection Line 2 -->
+            <div
+              class="connection-line-wrapper"
+              style="left: 460px; top: 103px"
+            >
+              <div class="connection-line gradient-purple-cyan"></div>
+            </div>
+
+            <!-- Node 3: Create Lead -->
+            <div class="flow-node" style="left: 540px; top: 50px">
+              <div class="node-header cyan">
+                <div class="node-icon-small">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                  </svg>
+                </div>
+                <h4 class="node-title-small">Criar Lead</h4>
+              </div>
+              <div class="node-body">
+                <p class="node-label">Campos</p>
+                <p class="node-value">nome, email, telefone</p>
+              </div>
+              <!-- Connection points -->
+              <div class="connection-point left"></div>
+              <div class="connection-point right"></div>
+            </div>
+
+            <!-- Connection Line 3 -->
+            <div
+              class="connection-line-wrapper"
+              style="left: 720px; top: 103px"
+            >
+              <div class="connection-line gradient-cyan-green"></div>
+            </div>
+
+            <!-- Node 4: AI Response -->
+            <div class="flow-node" style="left: 800px; top: 50px">
+              <div class="node-header green">
+                <div class="node-icon-small">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                  </svg>
+                </div>
+                <h4 class="node-title-small">Resposta IA</h4>
+              </div>
+              <div class="node-body">
+                <p class="node-label">Agente</p>
+                <p class="node-value">Vendas Corporativas</p>
+              </div>
+              <!-- Connection point left -->
+              <div class="connection-point left"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow Features -->
+      <div class="workflow-features">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4>Drag & Drop Visual</h4>
+            <p>
+              Interface intuitiva para construir fluxos complexos sem código
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4>Execução em Tempo Real</h4>
+            <p>
+              Workflows processados instantaneamente quando eventos são
+              disparados
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4>Integrações Ilimitadas</h4>
+            <p>Conecte com CRMs, ERPs, APIs e centenas de ferramentas</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div class="feature-content">
+            <h4>Condições Inteligentes</h4>
+            <p>
+              Adicione lógica condicional, loops e ramificações aos seus fluxos
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

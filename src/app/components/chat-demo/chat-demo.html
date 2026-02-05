@@ -1,0 +1,256 @@
+<section id="chat-demo" class="chat-demo" aria-labelledby="chat-demo-title">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="chat-demo-title" class="section-title">
+        Atendimento Inteligente em Ação
+      </h2>
+      <p class="section-subtitle">
+        Veja como a IA ATENDE MAIS responde instantaneamente com precisão e
+        naturalidade
+      </p>
+    </header>
+
+    <div class="chat-demo-wrapper">
+      <!-- Kanban Board -->
+      <div
+        class="kanban-board"
+        role="region"
+        aria-label="Quadro Kanban de atendimentos"
+      >
+        <div class="kanban-header">
+          <h3>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            Nosso CRM
+          </h3>
+          <span class="kanban-count"
+            >{{ kanbanCards.length }} atendimentos</span
+          >
+        </div>
+
+        <div class="kanban-columns">
+          <!-- New Column -->
+          <div class="kanban-column">
+            <div class="column-header new">
+              <span class="column-icon">📥</span>
+              <span class="column-title">Novos</span>
+              <span class="column-count">{{
+                getCardsByColumn("new").length
+              }}</span>
+            </div>
+            <div class="column-cards">
+              @for (card of getCardsByColumn("new"); track card.id) {
+                <div class="kanban-card" [attr.data-category]="card.category">
+                  <div class="card-header">
+                    <span class="card-category">{{ card.category }}</span>
+                    <span class="card-id">#{{ card.id }}</span>
+                  </div>
+                  <h4 class="card-title">{{ card.title }}</h4>
+                  <div class="card-footer">
+                    <span class="card-customer">{{ card.customer }}</span>
+                    <span class="card-time">Agora</span>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Processing Column -->
+          <div class="kanban-column">
+            <div class="column-header processing">
+              <span class="column-icon">⚡</span>
+              <span class="column-title">Atendimento</span>
+              <span class="column-count">{{
+                getCardsByColumn("processing").length
+              }}</span>
+            </div>
+            <div class="column-cards">
+              @for (card of getCardsByColumn("processing"); track card.id) {
+                <div
+                  class="kanban-card processing"
+                  [attr.data-category]="card.category"
+                >
+                  <div class="card-header">
+                    <span class="card-category">{{ card.category }}</span>
+                    <span class="card-id">#{{ card.id }}</span>
+                  </div>
+                  <h4 class="card-title">{{ card.title }}</h4>
+                  <div class="card-footer">
+                    <span class="card-customer">{{ card.customer }}</span>
+                    <div class="processing-indicator">
+                      <span class="pulse-dot"></span>
+                      Processando...
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Resolved Column -->
+          <div class="kanban-column">
+            <div class="column-header resolved">
+              <span class="column-icon">✅</span>
+              <span class="column-title">Resolvidos</span>
+              <span class="column-count">{{
+                getCardsByColumn("resolved").length
+              }}</span>
+            </div>
+            <div class="column-cards">
+              @for (card of getCardsByColumn("resolved"); track card.id) {
+                <div
+                  class="kanban-card resolved"
+                  [attr.data-category]="card.category"
+                >
+                  <div class="card-header">
+                    <span class="card-category">{{ card.category }}</span>
+                    <span class="card-id">#{{ card.id }}</span>
+                  </div>
+                  <h4 class="card-title">{{ card.title }}</h4>
+                  <div class="card-footer">
+                    <span class="card-customer">{{ card.customer }}</span>
+                    <span class="card-resolved">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        aria-hidden="true"
+                      >
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      Concluído
+                    </span>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Window -->
+      <div
+        class="chat-window"
+        role="region"
+        aria-label="Demonstração de conversa com agente de IA"
+      >
+        <!-- Chat Header -->
+        <div class="chat-window-header">
+          <div class="chat-avatar-container">
+            <div class="chat-avatar">
+              <img src="favicon.png" alt="Agente IA ATENDE MAIS" />
+            </div>
+            <div class="status-indicator online"></div>
+          </div>
+          <div class="chat-header-info">
+            <h3 class="chat-agent-name">Agente IA ATENDE MAIS</h3>
+            <p class="chat-status">Online • Responde em segundos</p>
+          </div>
+          <div class="chat-header-badge">
+            <span class="ai-badge">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+              IA Avançada
+            </span>
+          </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" role="log" aria-live="polite" #chatMessages>
+          <div class="messages-container">
+            @for (message of messages; track message.id) {
+              @if (message.visible) {
+                <div
+                  class="message-wrapper"
+                  [class.user-message]="message.sender === 'user'"
+                  [class.bot-message]="message.sender === 'bot'"
+                  role="article"
+                >
+                  @if (message.sender === "bot") {
+                    <div class="message-avatar">
+                      <img src="favicon.png" alt="Agente" />
+                    </div>
+                  }
+                  <div
+                    class="message-bubble"
+                    [attr.data-sender]="message.sender"
+                  >
+                    <p>{{ message.text }}</p>
+                  </div>
+                </div>
+              }
+            }
+
+            <!-- Typing Indicator -->
+            @if (showTyping) {
+              <div
+                class="message-wrapper bot-message typing-wrapper"
+                role="status"
+                aria-label="Agente está digitando"
+              >
+                <div class="message-avatar">
+                  <img src="favicon.png" alt="Agente" />
+                </div>
+                <div class="typing-indicator">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+
+        <!-- Chat Input (Disabled for demo) -->
+        <div class="chat-input-area">
+          <input
+            type="text"
+            placeholder="Digite sua mensagem..."
+            disabled
+            aria-label="Campo de mensagem - apenas demonstração"
+          />
+          <button class="send-button" disabled aria-label="Enviar mensagem">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

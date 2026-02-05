@@ -1,0 +1,132 @@
+<section class="agent-teams" id="teams">
+  <div class="container">
+    <div class="content">
+      <div class="text-content">
+        <span class="label">Trabalho em Equipe</span>
+        <h2>Times de Agentes Integrados</h2>
+        <p class="description">
+          Na IA ATENDE MAIS, seus agentes trabalham juntos de forma coordenada.
+          Cada agente especializado em sua função, compartilhando informações e
+          garantindo uma experiência fluida para seus clientes.
+        </p>
+
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-icon">🔄</div>
+            <div class="benefit-content">
+              <h3>Colaboração Automática</h3>
+              <p>Agentes se comunicam e transferem tarefas automaticamente</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">⚡</div>
+            <div class="benefit-content">
+              <h3>Resposta Rápida</h3>
+              <p>Múltiplos agentes processam solicitações simultaneamente</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">🎯</div>
+            <div class="benefit-content">
+              <h3>Especialização</h3>
+              <p>Cada agente focado em sua área de expertise</p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">📊</div>
+            <div class="benefit-content">
+              <h3>Visão Unificada</h3>
+              <p>Todos os agentes compartilham contexto e histórico</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-content">
+        <div class="team-visualization">
+          <div class="team-header">
+            <h3>Time de Agentes</h3>
+            <div class="team-status">
+              <span class="status-dot"></span>
+              <span>{{ agents.length }} Agentes Ativos</span>
+            </div>
+          </div>
+
+          <div class="agents-network">
+            <!-- Connection lines -->
+            <svg
+              class="connections"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <line
+                x1="15"
+                y1="35"
+                x2="38"
+                y2="15"
+                class="connection-line"
+                [class.active]="currentStep >= 1"
+              />
+              <line
+                x1="38"
+                y1="15"
+                x2="62"
+                y2="15"
+                class="connection-line"
+                [class.active]="currentStep >= 2"
+              />
+              <line
+                x1="62"
+                y1="15"
+                x2="85"
+                y2="35"
+                class="connection-line"
+                [class.active]="currentStep >= 3"
+              />
+            </svg>
+
+            <!-- Agents -->
+            <div
+              *ngFor="let agent of agents"
+              class="agent-node"
+              [class.visible]="agent.visible"
+              [class.active]="agent.status === 'active'"
+              [class.completed]="agent.status === 'completed'"
+              [style.left.%]="getAgentPosition(agent.id).x"
+              [style.top.%]="getAgentPosition(agent.id).y"
+            >
+              <div class="agent-avatar" [style.background]="agent.color">
+                <span class="agent-icon">{{ agent.icon }}</span>
+                <div class="agent-pulse"></div>
+              </div>
+
+              <div class="agent-info">
+                <div class="agent-name">{{ agent.name }}</div>
+                <div class="agent-role">{{ agent.role }}</div>
+              </div>
+
+              <div class="agent-status-badge" *ngIf="agent.status === 'active'">
+                Processando...
+              </div>
+            </div>
+
+            <!-- Tasks flow -->
+            <div class="tasks-feed">
+              <div
+                *ngFor="let task of tasks"
+                class="task-item"
+                [class.visible]="task.visible"
+              >
+                <div class="task-icon">✓</div>
+                <div class="task-text">{{ task.text }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,202 @@
+<section class="campaigns" id="campaigns">
+  <div class="container">
+    <div class="content">
+      <div class="text-content">
+        <span class="label">Campanhas em Massa</span>
+        <h2>Automatize Conversas em Escala</h2>
+        <p class="description">
+          Com a tecnologia IA ATENDE MAIS, você automatiza conversas em escala —
+          sem perder o toque humano. Nosso sistema de IA é capaz de responder
+          milhares de mensagens simultaneamente, garantindo agilidade,
+          consistência e experiência personalizada em cada atendimento. Ideal
+          para campanhas em massa, suporte ou pré-vendas, ajudando sua equipe a
+          focar no que realmente importa: fechar negócios.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-number">2000+</div>
+            <div class="stat-label">Atendimentos simultâneos</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">Taxa de resposta</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Disponibilidade</div>
+          </div>
+        </div>
+
+        <div class="features-list">
+          <div class="feature-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.6667 5L7.50004 14.1667L3.33337 10"
+                stroke="#10b981"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Envio massivo automatizado</span>
+          </div>
+          <div class="feature-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.6667 5L7.50004 14.1667L3.33337 10"
+                stroke="#10b981"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Time de agentes responde simultaneamente</span>
+          </div>
+          <div class="feature-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.6667 5L7.50004 14.1667L3.33337 10"
+                stroke="#10b981"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Personalização automática de mensagens</span>
+          </div>
+          <div class="feature-item">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.6667 5L7.50004 14.1667L3.33337 10"
+                stroke="#10b981"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Métricas e relatórios em tempo real</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-content">
+        <div class="campaign-demo">
+          <!-- Campaign Status -->
+          <div class="campaign-header">
+            <div class="campaign-info">
+              <h3>{{ campaign.name }}</h3>
+              <div class="campaign-meta">
+                <span
+                  class="campaign-status"
+                  [class.sending]="campaign.status === 'sending'"
+                  [class.completed]="campaign.status === 'completed'"
+                >
+                  <span class="status-dot"></span>
+                  {{
+                    campaign.status === "preparing"
+                      ? "Preparando"
+                      : campaign.status === "sending"
+                        ? "Enviando"
+                        : "Concluído"
+                  }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress-section">
+            <div class="progress-info">
+              <span class="progress-label">Mensagens enviadas</span>
+              <span class="progress-numbers"
+                >{{ campaign.sent }} / {{ campaign.total }}</span
+              >
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" [style.width.%]="getProgress()"></div>
+            </div>
+          </div>
+
+          <!-- Customer Responses -->
+          <div class="responses-section">
+            <div class="responses-header">
+              <h4>Respostas em Tempo Real</h4>
+              <span class="responses-count"
+                >{{ getVisibleCustomersCount() }} atendimentos ativos</span
+              >
+            </div>
+
+            <div class="customers-list">
+              <div
+                *ngFor="let customer of customers"
+                class="customer-item"
+                [class.visible]="customer.visible"
+                [attr.data-status]="customer.status"
+              >
+                <div
+                  class="customer-avatar"
+                  [style.background]="getStatusColor(customer.status)"
+                >
+                  <span class="agent-icon">{{ customer.agentIcon }}</span>
+                </div>
+
+                <div class="customer-content">
+                  <div class="customer-header">
+                    <span class="customer-name">{{ customer.name }}</span>
+                    <span
+                      class="customer-status"
+                      [style.color]="getStatusColor(customer.status)"
+                    >
+                      {{ getStatusLabel(customer.status) }}
+                    </span>
+                  </div>
+                  <div class="customer-message">{{ customer.message }}</div>
+
+                  <div
+                    class="typing-indicator"
+                    *ngIf="customer.status === 'responding'"
+                  >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+
+                <div class="check-icon" *ngIf="customer.status === 'completed'">
+                  ✓
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

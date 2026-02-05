@@ -1,0 +1,553 @@
+<!-- Budget Form Section with FormBuilder -->
+<section
+  id="solucoes"
+  class="customize-solution"
+  aria-labelledby="customize-title"
+>
+  <div class="container">
+    <header class="section-header">
+      <div class="section-tag">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        Monte sua Solução
+      </div>
+      <h2 id="customize-title" class="section-title">
+        Monte a Solução Perfeita
+      </h2>
+      <p class="section-subtitle">
+        Selecione os módulos que você precisa e crie uma solução personalizada
+        para seu negócio
+      </p>
+    </header>
+
+    <!-- Selected Counter -->
+    @if (selectedCount > 0) {
+      <div class="selected-counter">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span
+          >{{ selectedCount }}
+          {{
+            selectedCount === 1 ? "módulo selecionado" : "módulos selecionados"
+          }}</span
+        >
+      </div>
+    }
+
+    <!-- Options Grid -->
+    <div class="options-grid">
+      @for (option of options; track option.id) {
+        <div
+          class="option-card"
+          [class.selected]="option.selected"
+        >
+
+          <div class="option-icon">
+            @switch (option.icon) {
+              @case ("message-circle") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  ></path>
+                </svg>
+              }
+              @case ("phone") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+              }
+              @case ("workflow") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              }
+              @case ("database") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              }
+              @case ("instagram") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              }
+              @case ("chart") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              }
+              @case ("send") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              }
+              @case ("code") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              }
+              @case ("shopping-cart") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path
+                    d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                  ></path>
+                </svg>
+              }
+              @case ("calendar") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              }
+              @case ("megaphone") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M3 11l18-5v12L3 13v-2z"></path>
+                  <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
+                </svg>
+              }
+              @case ("users") {
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              }
+            }
+          </div>
+
+          <div class="option-content">
+            <div class="option-category">{{ option.category }}</div>
+            <h3 class="option-title">{{ option.title }}</h3>
+            <p class="option-description">{{ option.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- CTA -->
+    @if (selectedCount > 0) {
+      <div class="cta-customize">
+        <h3>
+          {{ selectedCount }}
+          {{
+            selectedCount === 1 ? "módulo selecionado" : "módulos selecionados"
+          }}!
+        </h3>
+        <p>Pronto para começar com sua solução personalizada?</p>
+      </div>
+    }
+
+    <!-- Budget Form -->
+    <div class="budget-form-section">
+      <div class="form-header">
+        <h3>Personalize seu Orçamento</h3>
+        <p>
+          Nos conte um pouco sobre suas necessidades para criar a proposta
+          perfeita
+        </p>
+      </div>
+
+      <form
+        class="budget-form"
+        [formGroup]="budgetForm"
+        (submit)="openModal($event)"
+      >
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="users">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Número de Usuários *
+            </label>
+            <input
+              type="number"
+              id="users"
+              formControlName="users"
+              placeholder="Ex: 50"
+              min="1"
+              [class.error]="
+                budgetForm.get('users')?.invalid &&
+                budgetForm.get('users')?.touched
+              "
+            />
+            @if (
+              budgetForm.get("users")?.invalid &&
+              budgetForm.get("users")?.touched
+            ) {
+              <span class="error-message">Campo obrigatório</span>
+            }
+          </div>
+
+          <div class="form-field">
+            <label for="monthly-volume">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                ></path>
+              </svg>
+              Volume Mensal de Atendimento *
+            </label>
+            <input
+              type="number"
+              id="monthly-volume"
+              formControlName="monthlyVolume"
+              placeholder="Ex: 5000"
+              min="0"
+              [class.error]="
+                budgetForm.get('monthlyVolume')?.invalid &&
+                budgetForm.get('monthlyVolume')?.touched
+              "
+            />
+            @if (
+              budgetForm.get("monthlyVolume")?.invalid &&
+              budgetForm.get("monthlyVolume")?.touched
+            ) {
+              <span class="error-message">Campo obrigatório</span>
+            }
+          </div>
+
+          <div class="form-field">
+            <label for="dispatch-volume">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              Volume de Disparo por Mês *
+            </label>
+            <input
+              type="number"
+              id="dispatch-volume"
+              formControlName="dispatchVolume"
+              placeholder="Ex: 10000"
+              min="0"
+              [class.error]="
+                budgetForm.get('dispatchVolume')?.invalid &&
+                budgetForm.get('dispatchVolume')?.touched
+              "
+            />
+            @if (
+              budgetForm.get("dispatchVolume")?.invalid &&
+              budgetForm.get("dispatchVolume")?.touched
+            ) {
+              <span class="error-message">Campo obrigatório</span>
+            }
+          </div>
+
+          <div class="form-field">
+            <label for="integrations">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              Sistemas para Integração *
+            </label>
+            <input
+              type="text"
+              id="integrations"
+              formControlName="integrations"
+              placeholder="Ex: Salesforce, HubSpot, SAP..."
+              [class.error]="
+                budgetForm.get('integrations')?.invalid &&
+                budgetForm.get('integrations')?.touched
+              "
+            />
+            @if (
+              budgetForm.get("integrations")?.invalid &&
+              budgetForm.get("integrations")?.touched
+            ) {
+              <span class="error-message">Campo obrigatório</span>
+            }
+          </div>
+        </div>
+      </form>
+
+      <div style="text-align: center; margin-top: 2rem">
+        <a
+          href="https://wa.me/5511935359586"
+          class="btn-outline-white btn-large"
+          style="color: #48c1c4"
+        >
+          Fale Conosco
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+@if (showModal) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeModal()" aria-label="Fechar">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-icon">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h2>Quase lá!</h2>
+        <p>
+          Só precisamos de alguns dados para enviar seu orçamento personalizado
+        </p>
+      </div>
+
+      <form
+        class="modal-form"
+        [formGroup]="contactForm"
+        (submit)="submitForm($event)"
+      >
+        <div class="form-field">
+          <label for="name">Nome Completo *</label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            placeholder="Digite seu nome completo"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="company">Nome da Empresa *</label>
+          <input
+            type="text"
+            id="company"
+            formControlName="company"
+            placeholder="Digite o nome da empresa"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Telefone *</label>
+          <input
+            type="tel"
+            id="phone"
+            formControlName="phone"
+            placeholder="(00) 00000-0000"
+            mask="(00) 00000-0000||(00) 0000-0000"
+            [showMaskTyped]="true"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="email">E-mail *</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="seu@email.com"
+          />
+        </div>
+
+        <div class="modal-actions">
+          <button
+            type="button"
+            class="btn-outline"
+            (click)="closeModal()"
+            [disabled]="isSubmitting"
+          >
+            Cancelar
+          </button>
+          <button
+            type="submit"
+            class="btn-primary"
+            [disabled]="isSubmitting"
+            [class.loading]="isSubmitting"
+          >
+            @if (isSubmitting) {
+              <svg
+                class="spinner"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
+                <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
+              </svg>
+              <span>Enviando...</span>
+            } @else {
+              <span>Enviar Solicitação</span>
+            }
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+}

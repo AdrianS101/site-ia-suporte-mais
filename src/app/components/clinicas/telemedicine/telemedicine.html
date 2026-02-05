@@ -1,0 +1,113 @@
+<section class="telemedicine">
+  <div class="container">
+    <div class="section-header">
+      <div class="header-content">
+        <span class="video-badge">
+          <span class="recording-dot"></span>
+          TELE ATENDIMENTO
+        </span>
+        <h2>Consultas Online com Qualidade Premium</h2>
+        <p>Atendimento médico profissional de qualquer lugar, a qualquer momento</p>
+      </div>
+    </div>
+
+    <!-- Video Call Interface -->
+    <div class="video-interface" [class.connecting]="callStatus === 'connecting'" [class.connected]="callStatus === 'connected'">
+      <div class="video-grid">
+        <!-- Doctor Video -->
+        <div class="video-participant doctor-video">
+          <div class="video-placeholder">
+            <div class="avatar-large">{{ doctor.avatar }}</div>
+            <div class="participant-name">
+              <span class="name">{{ doctor.name }}</span>
+              <span class="role">{{ doctor.role }}</span>
+            </div>
+          </div>
+          <div class="video-overlay" *ngIf="callStatus === 'connected'">
+            <div class="participant-badge">
+              <span class="mic-icon">🎤</span>
+              {{ doctor.name }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Patient Video (Picture-in-picture) -->
+        <div class="video-participant patient-video">
+          <div class="video-placeholder">
+            <div class="avatar-small">{{ patient.avatar }}</div>
+          </div>
+          <div class="video-overlay" *ngIf="callStatus === 'connected'">
+            <span class="mic-icon-small">🎤</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call Status Overlay -->
+      <div class="call-status-overlay" *ngIf="callStatus === 'connecting'">
+        <div class="connecting-spinner"></div>
+        <p class="connecting-text">Conectando chamada...</p>
+      </div>
+
+      <!-- Call Controls -->
+      <div class="call-controls" *ngIf="callStatus === 'connected'">
+        <div class="controls-left">
+          <div class="connection-indicator">
+            <div class="quality-dot" [style.background-color]="getConnectionColor()"></div>
+            <span class="quality-text">{{ getConnectionText() }}</span>
+          </div>
+          <div class="call-duration">
+            <span class="duration-icon">⏱️</span>
+            {{ callDuration }}
+          </div>
+        </div>
+
+        <div class="controls-center">
+          <button class="control-btn btn-primary">
+            <span class="btn-icon">🎤</span>
+          </button>
+          <button class="control-btn btn-primary">
+            <span class="btn-icon">📹</span>
+          </button>
+          <button class="control-btn btn-danger">
+            <span class="btn-icon">📞</span>
+          </button>
+          <button class="control-btn btn-primary">
+            <span class="btn-icon">🖥️</span>
+          </button>
+          <button class="control-btn btn-primary">
+            <span class="btn-icon">💬</span>
+          </button>
+        </div>
+
+        <div class="controls-right">
+          <button class="control-btn btn-secondary">
+            <span class="btn-icon">⚙️</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features List - Simple -->
+    <div class="features-list">
+      <div class="feature-item" *ngFor="let feature of features; let i = index" [style.animation-delay.s]="i * 0.1">
+        <div class="feature-name">{{ feature.name }}</div>
+        <div class="feature-description">{{ feature.description }}</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <div class="cta-content">
+        <h3>Comece a usar Tele Atendimento hoje</h3>
+        <p>Expanda seu alcance e ofereça mais conveniência aos seus pacientes</p>
+      </div>
+      <button class="cta-button">
+        Experimentar Gratuitamente
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

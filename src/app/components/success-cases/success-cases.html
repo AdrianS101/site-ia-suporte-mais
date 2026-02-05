@@ -1,0 +1,72 @@
+<section id="cases" class="success-cases">
+  <!-- Client Logos Bar -->
+  <div class="clients-bar">
+    <div class="clients-image">
+      <img src="meu-clientes.png" alt="Nossos Clientes" />
+    </div>
+  </div>
+
+  <!-- Success Cases Section -->
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        Cases de Sucesso
+        <span class="highlight">#CXaaS em ação</span>
+      </h2>
+
+      <div class="navigation-buttons">
+        <button
+          class="nav-button"
+          (click)="previous()"
+          aria-label="Caso anterior">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button
+          class="nav-button"
+          (click)="next()"
+          aria-label="Próximo caso">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Cases Carousel -->
+    <div class="cases-carousel">
+      <div class="cases-wrapper">
+        @for (case of visibleCases; track case.id) {
+          <div class="case-card">
+            <div class="case-image">
+              <img [src]="case.image" [alt]="case.company" />
+            </div>
+
+            <div class="case-content">
+              <h3 class="case-company">{{ case.company }}</h3>
+              <p class="case-description">{{ case.description }}</p>
+
+              <button class="btn-case">Conferir Case</button>
+
+              <div class="case-metrics">
+                @for (metric of case.metrics; track $index) {
+                  <div class="metric">
+                    <div class="metric-value">{{ metric.value }}</div>
+                    <div class="metric-label">{{ metric.label }}</div>
+                    <div class="metric-sublabel">{{ metric.sublabel }}</div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width]="getProgressWidth()"></div>
+    </div>
+  </div>
+</section>

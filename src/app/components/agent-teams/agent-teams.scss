@@ -1,0 +1,489 @@
+:host {
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.agent-teams {
+  padding: 120px 0;
+  background: linear-gradient(180deg, #111827 0%, #0a0a0a 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .text-content {
+    .label {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 24px;
+      color: #3b82f6;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 24px 0;
+      background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0 0 40px 0;
+    }
+
+    .benefits-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+
+      .benefit-item {
+        display: flex;
+        gap: 16px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateX(8px);
+          border-color: rgba(59, 130, 246, 0.3);
+          background: rgba(59, 130, 246, 0.05);
+        }
+
+        .benefit-icon {
+          font-size: 32px;
+          flex-shrink: 0;
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .benefit-content {
+          h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+          }
+
+          p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+
+  .demo-content {
+    .team-visualization {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 32px;
+      backdrop-filter: blur(20px);
+      min-height: 650px;
+      display: flex;
+      flex-direction: column;
+
+      .team-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        h3 {
+          font-size: 20px;
+          font-weight: 600;
+          color: #ffffff;
+          margin: 0;
+        }
+
+        .team-status {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 6px 12px;
+          background: rgba(59, 130, 246, 0.1);
+          border: 1px solid rgba(59, 130, 246, 0.3);
+          border-radius: 12px;
+          font-size: 12px;
+          color: #3b82f6;
+          font-weight: 600;
+
+          .status-dot {
+            width: 6px;
+            height: 6px;
+            background: #3b82f6;
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+          }
+        }
+      }
+
+      .agents-network {
+        position: relative;
+        flex: 1;
+        min-height: 420px;
+        display: flex;
+        flex-direction: column;
+
+        .connections {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: calc(100% - 140px);
+          z-index: 1;
+          pointer-events: none;
+
+          .connection-line {
+            stroke: rgba(59, 130, 246, 0.2);
+            stroke-width: 2;
+            stroke-dasharray: 5, 5;
+            transition: all 0.5s ease;
+
+            &.active {
+              stroke: rgba(59, 130, 246, 0.6);
+              stroke-dasharray: 0;
+              animation: flow 1s ease-in-out;
+            }
+          }
+        }
+
+        .agent-node {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          z-index: 2;
+
+          &.visible {
+            opacity: 1;
+          }
+
+          &.active {
+            .agent-avatar {
+              box-shadow: 0 0 30px currentColor;
+              transform: scale(1.1);
+            }
+
+            .agent-pulse {
+              display: block;
+            }
+          }
+
+          &.completed {
+            .agent-avatar::after {
+              content: '';
+              position: absolute;
+              top: -4px;
+              right: -4px;
+              width: 20px;
+              height: 20px;
+              background: #10b981;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 12px;
+              color: white;
+              animation: check-pop 0.3s ease;
+            }
+          }
+
+          .agent-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+            .agent-icon {
+              position: relative;
+              z-index: 2;
+            }
+
+            .agent-pulse {
+              display: none;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              background: currentColor;
+              opacity: 0.4;
+              animation: pulse-ring 1.5s ease-out infinite;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          .agent-info {
+            margin-top: 12px;
+            text-align: center;
+            min-width: 140px;
+
+            .agent-name {
+              font-size: 14px;
+              font-weight: 600;
+              color: #ffffff;
+              margin-bottom: 4px;
+            }
+
+            .agent-role {
+              font-size: 12px;
+              color: rgba(255, 255, 255, 0.6);
+            }
+          }
+
+          .agent-status-badge {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 12px;
+            background: rgba(59, 130, 246, 0.9);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            border-radius: 8px;
+            white-space: nowrap;
+            animation: bounce 0.5s ease;
+          }
+        }
+
+        .tasks-feed {
+          margin-top: auto;
+          background: rgba(0, 0, 0, 0.4);
+          border-radius: 12px;
+          padding: 16px;
+          min-height: 160px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          .task-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+
+            &.visible {
+              opacity: 1;
+              transform: translateY(0);
+            }
+
+            .task-icon {
+              width: 20px;
+              height: 20px;
+              background: #10b981;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 12px;
+              color: white;
+              flex-shrink: 0;
+            }
+
+            .task-text {
+              font-size: 13px;
+              color: rgba(255, 255, 255, 0.9);
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+@keyframes flow {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 968px) {
+  .agent-teams {
+    padding: 80px 0;
+
+    .content {
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+
+    .text-content {
+      h2 {
+        font-size: 36px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .agent-teams {
+    padding: 60px 0;
+
+    .text-content {
+      h2 {
+        font-size: 28px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .benefits-list {
+        .benefit-item {
+          padding: 16px;
+
+          .benefit-icon {
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+          }
+
+          .benefit-content {
+            h3 {
+              font-size: 16px;
+            }
+
+            p {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+
+    .demo-content {
+      .team-visualization {
+        padding: 16px;
+        min-height: 500px;
+
+        .agents-network {
+          height: 400px;
+
+          .agent-node {
+            .agent-avatar {
+              width: 60px;
+              height: 60px;
+              font-size: 24px;
+            }
+
+            .agent-info {
+              min-width: 100px;
+
+              .agent-name {
+                font-size: 12px;
+              }
+
+              .agent-role {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

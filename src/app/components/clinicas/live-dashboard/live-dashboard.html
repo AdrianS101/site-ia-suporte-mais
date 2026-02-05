@@ -1,0 +1,138 @@
+<section class="live-dashboard">
+  <div class="container">
+    <div class="section-header">
+      <div class="header-content">
+        <span class="live-badge">
+          <span class="pulse-dot"></span>
+          AO VIVO
+        </span>
+        <h2>Dashboard em Tempo Real</h2>
+        <p>Veja como sua clínica funciona com automação inteligente</p>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+      <div class="stat-card" style="animation-delay: 0s">
+        <div class="stat-icon">📅</div>
+        <div class="stat-content">
+          <div class="stat-number">{{ stats.totalAppointments }}</div>
+          <div class="stat-label">Agendamentos Hoje</div>
+        </div>
+      </div>
+
+      <div class="stat-card" style="animation-delay: 0.1s">
+        <div class="stat-icon">✓</div>
+        <div class="stat-content">
+          <div class="stat-number">{{ stats.completedToday }}</div>
+          <div class="stat-label">Consultas Realizadas</div>
+        </div>
+      </div>
+
+      <div class="stat-card" style="animation-delay: 0.2s">
+        <div class="stat-icon">⏳</div>
+        <div class="stat-content">
+          <div class="stat-number">{{ stats.pendingConfirmation }}</div>
+          <div class="stat-label">Aguardando Confirmação</div>
+        </div>
+      </div>
+
+      <div class="stat-card" style="animation-delay: 0.3s">
+        <div class="stat-icon">👨‍⚕️</div>
+        <div class="stat-content">
+          <div class="stat-number">{{ stats.doctorsAvailable }}</div>
+          <div class="stat-label">Médicos Disponíveis</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-grid">
+      <!-- Doctors List -->
+      <div class="dashboard-card doctors-card">
+        <div class="card-header">
+          <h3>Equipe Médica</h3>
+          <span class="badge">{{ doctors.length }} médicos</span>
+        </div>
+
+        <div class="doctors-list">
+          <div class="doctor-item"
+               *ngFor="let doctor of doctors; let i = index"
+               [style.animation-delay.s]="i * 0.1">
+            <div class="doctor-avatar">
+              <span class="avatar-emoji">{{ doctor.avatar }}</span>
+              <div class="status-indicator" [style.background-color]="getStatusColor(doctor.status)"></div>
+            </div>
+
+            <div class="doctor-info">
+              <div class="doctor-name">{{ doctor.name }}</div>
+              <div class="doctor-specialty">{{ doctor.specialty }}</div>
+            </div>
+
+            <div class="doctor-stats">
+              <div class="status-badge" [class]="'status-' + doctor.status">
+                {{ getStatusText(doctor.status) }}
+              </div>
+              <div class="appointments-count" *ngIf="doctor.status !== 'off'">
+                {{ doctor.appointmentsToday }} consultas
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Appointments -->
+      <div class="dashboard-card appointments-card">
+        <div class="card-header">
+          <h3>Agendamentos Recentes</h3>
+          <span class="live-indicator">
+            <span class="pulse-dot-small"></span>
+            Tempo real
+          </span>
+        </div>
+
+        <div class="appointments-list">
+          <div class="appointment-item"
+               *ngFor="let appointment of appointments"
+               [class.new-appointment]="appointment.isNew">
+            <div class="appointment-time">
+              <div class="time-display">{{ appointment.time }}</div>
+              <div class="status-dot" [class]="'status-' + appointment.status"></div>
+            </div>
+
+            <div class="appointment-info">
+              <div class="patient-name">{{ appointment.patientName }}</div>
+              <div class="doctor-name-small">{{ appointment.doctorName }}</div>
+            </div>
+
+            <div class="appointment-status">
+              <span class="status-pill" [class]="'pill-' + appointment.status">
+                {{ appointment.status === 'confirmed' ? 'Confirmado' : appointment.status === 'pending' ? 'Pendente' : 'Concluído' }}
+              </span>
+            </div>
+          </div>
+
+          <div class="empty-state" *ngIf="appointments.length === 0">
+            <div class="empty-icon">📋</div>
+            <div class="empty-text">Aguardando novos agendamentos...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-box">
+      <div class="cta-content">
+        <h3>Pronto para automatizar sua clínica?</h3>
+        <p>Comece gratuitamente e veja resultados em dias, não meses</p>
+      </div>
+      <button class="cta-button">
+        Agendar Demonstração
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
