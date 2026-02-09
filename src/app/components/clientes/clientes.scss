@@ -1,0 +1,74 @@
+.clientes {
+  padding: 80px 0;
+  background: linear-gradient(180deg,#090A0F,#111827);
+
+  .clientes-tag {
+    text-align: center;
+    color: #ffffffaa;
+    font-size: 16px;
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+
+  .logos-wrapper {
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 15%,
+      white 85%,
+      transparent
+    );
+  }
+
+  .logos-track {
+    align-items: center;
+    display: flex;
+    gap: 80px;
+    width: max-content;
+    animation: scrollLogos 30s linear infinite;
+  }
+
+  img {
+     height: 70px;       /* tamanho padrão */
+     width: 140px;       /* largura fixa */
+     object-fit: contain; /* mantém proporção */
+     opacity: 0.8;
+     filter: brightness(0) invert(1);
+     transition: 0.3s;
+     vertical-align: middle;
+  }
+
+  .logo-color {
+  filter: none !important;
+}
+
+.logo-mercado {
+  height: 95px !important;
+  width: auto !important;
+}
+
+.vuelo {
+  height: 50px !important;
+  width: auto !important;
+}
+
+.bradesco {
+  height: 95px !important;
+  width: auto !important;
+}
+  img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

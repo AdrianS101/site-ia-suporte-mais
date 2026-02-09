@@ -1,3 +1,4 @@
+import { Clientes } from '../../components/clientes/clientes';
 import { Component } from '@angular/core';
 import { AgentTeams } from '../../components/agent-teams/agent-teams';
 import { Campaigns } from '../../components/campaigns/campaigns';
@@ -12,11 +13,14 @@ import { Pricing } from '../../components/pricing/pricing';
 import { SentimentAnalysis } from '../../components/sentiment-analysis/sentiment-analysis';
 import { Workflow } from '../../components/workflow/workflow';
 
+
+
 @Component({
   selector: 'app-home',
   imports: [
     Header,
     Hero,
+    Clientes,
     ChatDemo,
     Workflow,
     FollowUp,
