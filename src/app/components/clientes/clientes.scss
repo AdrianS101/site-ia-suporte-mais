@@ -5,11 +5,11 @@
   .clientes-tag {
     text-align: center;
     color: #ffffffaa;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 50px;
     font-weight: 700;
-    text-transform: uppercase; /* deixa elegante e uniforme */
-    letter-spacing: 1px;       /* espaçamento entre letras */
+    text-transform: none; /* deixa elegante e uniforme */
+    letter-spacing: 0.5px;       /* espaçamento entre letras */
     line-height: 1.2;          /* melhor leitura */
     position: relative;
 
@@ -22,9 +22,9 @@
     left: 50%;
     bottom: -10px;
     transform: translateX(-50%);
-    width: 60px;
+    width: 50px;
     height: 3px;
-    background: linear-gradient(to right, #ff6a00, #ffdd00);
+    background: #30c2de;
     border-radius: 2px;
 }
 
