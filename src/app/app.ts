@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { ToastComponent } from './components/toast/toast';
+import { AnalyticsService } from './services/analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +13,16 @@ import { ToastComponent } from './components/toast/toast';
   `,
   styles: []
 })
-export class App {}
+export class App {
+  private analytics = inject(AnalyticsService);
+  private router = inject(Router);
+
+  constructor() {
+    // Rastreia pageview a cada navegação de rota
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.analytics.trackPageView(event.urlAfterRedirects);
+    });
+  }
+}
