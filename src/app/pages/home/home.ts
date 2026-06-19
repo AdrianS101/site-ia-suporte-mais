@@ -7,6 +7,7 @@ import { CtaFinal } from '../../components/cta-final/cta-final';
 import { ChatDemo } from '../../components/chat-demo/chat-demo';
 import { ChatWidget } from '../../components/chat-widget/chat-widget';
 import { CustomizeSolution } from '../../components/customize-solution/customize-solution';
+import { Diferencial } from '../../components/diferencial/diferencial';
 import { Faq } from '../../components/faq/faq';
 import { Features } from '../../components/features/features';
 import { FollowUp } from '../../components/follow-up/follow-up';
@@ -36,6 +37,7 @@ import { Workflow } from '../../components/workflow/workflow';
     CustomizeSolution,
     Features,
     Benefits,
+    Diferencial,
     SuccessCases,
     Faq,
     CtaFinal,
@@ -46,5 +48,5 @@ import { Workflow } from '../../components/workflow/workflow';
   styleUrl: './home.scss',
 })
 export class HomePage {
-  title = 'IA Suporte+';
+  title = 'IA HelpDesk+ - Plataforma Inteligente de Gestão de Chamados';
 }
