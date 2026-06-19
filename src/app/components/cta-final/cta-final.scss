@@ -4,7 +4,7 @@
 
 .cta-final {
   padding: 90px 0;
-  background: #ffffff;
+  background: #070b14;
 }
 
 .container {
@@ -19,8 +19,8 @@
   text-align: center;
   border-radius: 28px;
   padding: 72px 32px;
-  background: linear-gradient(135deg, #5a4ad9 0%, #6d5efc 100%);
-  box-shadow: 0 30px 60px rgba(90, 74, 217, 0.3);
+  background: linear-gradient(135deg, #1e6bff 0%, #36c6ff 100%);
+  box-shadow: 0 30px 60px rgba(30, 107, 255, 0.35);
 }
 
 .cta-card::before {
@@ -88,7 +88,7 @@
 
 .cta-btn.primary {
   background: #ffffff;
-  color: #5a4ad9;
+  color: #1e6bff;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 

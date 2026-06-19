@@ -21,19 +21,23 @@ export class Faq {
   faqs: FaqItem[] = [
     {
       q: 'O que é a IA HelpDesk+?',
-      a: 'A IA HelpDesk+ é uma plataforma inteligente de gestão de chamados que utiliza Inteligência Artificial para apoiar equipes de suporte e service desk.',
+      a: 'É um sistema de chamados com Inteligência Artificial de copiloto: organiza e resume os chamados, sugere respostas com base no conhecimento da empresa e dá ao gestor uma visão completa da operação.',
     },
     {
       q: 'A IA substitui meus atendentes?',
-      a: 'Não. Ela atua como copiloto operacional, ajudando a equipe a trabalhar com mais eficiência.',
+      a: 'Não. A IA é copiloto, não piloto. Ela acelera o trabalho da equipe sugerindo contexto e respostas, mas quem decide e responde é sempre o atendente.',
     },
     {
-      q: 'Posso controlar SLA?',
-      a: 'Sim. A plataforma possui acompanhamento de SLA, prioridades e responsáveis.',
+      q: 'A IA inventa respostas?',
+      a: 'Não. As sugestões são baseadas no conhecimento e no histórico da sua empresa, não em achismo.',
     },
     {
-      q: 'É possível acompanhar indicadores?',
-      a: 'Sim. A solução oferece dashboards e métricas operacionais em tempo real.',
+      q: 'Consigo controlar SLA e prazos?',
+      a: 'Sim. A plataforma acompanha prazos, prioridades, responsáveis e mostra o que está vencendo antes de virar problema.',
+    },
+    {
+      q: 'Onde ficam os dados da minha empresa?',
+      a: 'Os dados permanecem na infraestrutura da sua empresa, com conformidade LGPD, controle de acesso, auditoria e criptografia.',
     },
     {
       q: 'A IA HelpDesk+ integra com outros sistemas?',

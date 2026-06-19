@@ -1,6 +1,6 @@
 .benefits {
   padding: 100px 0;
-  background: #f7f7fb;
+  background: #0b1222;
 }
 
 .container {
@@ -21,8 +21,8 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #6d5efc;
-  background: rgba(109, 94, 252, 0.1);
+  color: #5cd6ff;
+  background: rgba(43, 140, 255, 0.12);
   padding: 6px 16px;
   border-radius: 999px;
   margin-bottom: 16px;
@@ -31,26 +31,26 @@
 .section-title {
   font-size: 40px;
   font-weight: 800;
-  color: #1a2332;
+  color: #eef3fb;
   line-height: 1.2;
   margin-bottom: 16px;
 }
 
 .section-subtitle {
   font-size: 18px;
-  color: #6b7280;
+  color: #9fb0c7;
   line-height: 1.6;
 }
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 24px;
 }
 
 .benefit-card {
-  background: #ffffff;
-  border: 1px solid #ececf5;
+  background: #0f1830;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 28px 24px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -58,8 +58,8 @@
 
 .benefit-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(109, 94, 252, 0.15);
-  border-color: #6d5efc;
+  box-shadow: 0 18px 40px rgba(43, 140, 255, 0.12);
+  border-color: #2b8cff;
 }
 
 .benefit-icon {
@@ -71,19 +71,19 @@
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(90, 74, 217, 0.12) 0%, rgba(109, 94, 252, 0.12) 100%);
+  background: linear-gradient(135deg, rgba(30, 107, 255, 0.18) 0%, rgba(54, 198, 255, 0.18) 100%);
 }
 
 .benefit-title {
   font-size: 18px;
   font-weight: 700;
-  color: #1a2332;
+  color: #eef3fb;
   margin-bottom: 10px;
 }
 
 .benefit-text {
   font-size: 15px;
-  color: #6b7280;
+  color: #9fb0c7;
   line-height: 1.6;
 }
 

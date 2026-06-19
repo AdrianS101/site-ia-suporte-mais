@@ -1,0 +1,206 @@
+:host {
+  display: block;
+}
+
+.como-resolve {
+  background: #0b1222;
+  padding: 100px 0;
+  color: #eef3fb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Section header ---------- */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 64px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: rgba(43, 140, 255, 0.12);
+  color: #5cd6ff;
+  border: 1px solid rgba(43, 140, 255, 0.25);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: 20px 0 16px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #eef3fb;
+}
+
+.section-subtitle {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #9fb0c7;
+}
+
+/* ---------- Timeline ---------- */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+/* vertical connector line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 28px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(43, 140, 255, 0.05),
+    rgba(43, 140, 255, 0.45),
+    rgba(43, 140, 255, 0.05)
+  );
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding-bottom: 28px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.step-badge {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e6bff, #36c6ff);
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  box-shadow: 0 0 0 6px #0b1222, 0 8px 24px rgba(43, 140, 255, 0.35);
+  z-index: 1;
+}
+
+.step-card {
+  flex: 1;
+  background: #0f1830;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 22px 26px;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+
+  &:hover {
+    border-color: rgba(43, 140, 255, 0.55);
+    box-shadow: 0 0 0 1px rgba(43, 140, 255, 0.35),
+      0 18px 40px rgba(43, 140, 255, 0.18);
+    transform: translateY(-2px);
+  }
+}
+
+.step-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #eef3fb;
+}
+
+.step-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #9fb0c7;
+}
+
+/* ---------- Copilot note ---------- */
+.copilot-note {
+  max-width: 860px;
+  margin: 56px auto 0;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 107, 255, 0.1),
+    rgba(54, 198, 255, 0.06)
+  );
+  border: 1px solid rgba(43, 140, 255, 0.25);
+  border-radius: 16px;
+  padding: 32px 28px;
+
+  p {
+    margin: 16px auto 0;
+    max-width: 640px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #9fb0c7;
+  }
+}
+
+.copilot-pill {
+  display: inline-block;
+  background: linear-gradient(135deg, #1e6bff, #36c6ff);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 24px rgba(43, 140, 255, 0.35);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .como-resolve {
+    padding: 72px 0;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+
+  .timeline::before {
+    left: 22px;
+  }
+
+  .step {
+    gap: 16px;
+  }
+
+  .step-badge {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .step-card {
+    padding: 18px 18px;
+  }
+}

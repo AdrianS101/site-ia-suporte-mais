@@ -2,6 +2,29 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+/* ===== IA HelpDesk+ — Tema escuro global (estilo IA Atende+) ===== */
+:root {
+  /* Fundos escuros contínuos */
+  --bg: #070b14;
+  --bg-elev: #0d1426;
+  --surface: #111a30;
+  --surface-2: #0a1120;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  /* Texto */
+  --text: #eef3fb;
+  --text-muted: #9fb0c7;
+  --text-dim: #6e7e97;
+
+  /* Azul neon (destaque) */
+  --neon: #2b8cff;
+  --neon-bright: #3da9ff;
+  --neon-glow: #5cd6ff;
+  --neon-deep: #1e6bff;
+  --neon-gradient: linear-gradient(135deg, #1e6bff 0%, #36c6ff 100%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +40,8 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+  color: var(--text);
 }
 
 img {

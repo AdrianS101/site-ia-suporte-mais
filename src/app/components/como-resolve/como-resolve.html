@@ -1,0 +1,32 @@
+<section id="como-resolve" class="como-resolve">
+  <div class="container">
+    <header class="section-header">
+      <span class="section-tag">Como funciona</span>
+      <h2 class="section-title">Como a IA HelpDesk+ resolve</h2>
+      <p class="section-subtitle">
+        Do chamado que chega até a visão completa do gestor, a IA atua como copiloto
+        da equipe em cada etapa.
+      </p>
+    </header>
+
+    <ol class="timeline">
+      @for (etapa of etapas; track etapa.numero) {
+        <li class="step">
+          <div class="step-badge">{{ etapa.numero }}</div>
+          <div class="step-card">
+            <h3 class="step-title">{{ etapa.titulo }}</h3>
+            <p class="step-text">{{ etapa.texto }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+
+    <div class="copilot-note">
+      <span class="copilot-pill">Copiloto, não piloto</span>
+      <p>
+        A IA acelera o trabalho, organiza o contexto e sugere caminhos, mas a decisão
+        final é sempre da sua equipe. A IA não pilota o atendimento, ela copilota.
+      </p>
+    </div>
+  </div>
+</section>

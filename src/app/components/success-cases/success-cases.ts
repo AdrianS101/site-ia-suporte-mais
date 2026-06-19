@@ -25,11 +25,11 @@ export class SuccessCases {
 
   cases: SuccessCase[] = [
     {
-      id: 'suporte-ti',
-      company: 'Suporte de TI',
+      id: 'suporte-software',
+      company: 'Suporte de Software',
       logo: 'logo.png',
       image: 'logo.png',
-      description: 'Abertura, triagem e resolução de chamados técnicos com contexto completo e respostas sugeridas pela IA.',
+      description: 'Chamados chegam resumidos e com contexto.',
       metrics: [
         {
           value: '-40',
@@ -44,68 +44,30 @@ export class SuccessCases {
       ]
     },
     {
-      id: 'rh',
-      company: 'RH',
+      id: 'service-desk-interno',
+      company: 'Service Desk Interno',
       logo: 'logo.png',
       image: 'logo.png',
-      description: 'Centraliza as solicitações dos colaboradores (benefícios, documentos e dúvidas) e responde com mais agilidade.',
+      description: 'Funcionários recebem suporte mais rápido.',
       metrics: [
         {
-          value: '+35',
-          label: 'DE GANHO EM',
-          sublabel: 'AGILIDADE'
-        },
-        {
-          value: '-25',
-          label: 'NO RETRABALHO',
-          sublabel: 'DE SOLICITAÇÕES'
-        }
-      ]
-    },
-    {
-      id: 'facilities',
-      company: 'Facilities',
-      logo: 'logo.png',
-      image: 'logo.png',
-      description: 'Organiza pedidos de manutenção, infraestrutura e serviços prediais em um fluxo único e rastreável.',
-      metrics: [
-        {
-          value: '-30',
-          label: 'NO TEMPO DE',
-          sublabel: 'ATENDIMENTO'
-        },
-        {
-          value: '+20',
-          label: 'DE GANHO EM',
-          sublabel: 'ORGANIZAÇÃO'
-        }
-      ]
-    },
-    {
-      id: 'atendimento-interno',
-      company: 'Atendimento interno',
-      logo: 'logo.png',
-      image: 'logo.png',
-      description: 'Um único canal inteligente para concentrar e responder todas as demandas internas da empresa.',
-      metrics: [
-        {
-          value: '+40',
-          label: 'DE GANHO EM',
-          sublabel: 'PRODUTIVIDADE'
-        },
-        {
-          value: '-30',
+          value: '-35',
           label: 'NO TEMPO DE',
           sublabel: 'PRIMEIRA RESPOSTA'
+        },
+        {
+          value: '+30',
+          label: 'DE GANHO EM',
+          sublabel: 'AGILIDADE'
         }
       ]
     },
     {
-      id: 'operacoes',
-      company: 'Operações',
+      id: 'pos-venda',
+      company: 'Pós-venda',
       logo: 'logo.png',
       image: 'logo.png',
-      description: 'Acompanha o SLA, prioriza o que é crítico e reduz o tempo de resposta das equipes operacionais.',
+      description: 'Controle de SLA e acompanhamento completo.',
       metrics: [
         {
           value: '+95',
@@ -113,66 +75,28 @@ export class SuccessCases {
           sublabel: 'CUMPRIDO'
         },
         {
-          value: '-35',
+          value: '-30',
           label: 'NO TEMPO',
           sublabel: 'DE RESPOSTA'
         }
       ]
     },
     {
-      id: 'service-desk',
-      company: 'Service Desk',
+      id: 'operacoes-corporativas',
+      company: 'Operações Corporativas',
       logo: 'logo.png',
       image: 'logo.png',
-      description: 'Padroniza o atendimento e acelera a resolução de chamados com o apoio da IA em cada etapa.',
-      metrics: [
-        {
-          value: '-40',
-          label: 'NO TEMPO',
-          sublabel: 'DE RESOLUÇÃO'
-        },
-        {
-          value: '+30',
-          label: 'DE GANHO EM',
-          sublabel: 'PADRONIZAÇÃO'
-        }
-      ]
-    },
-    {
-      id: 'csc',
-      company: 'CSC',
-      logo: 'logo.png',
-      image: 'logo.png',
-      description: 'Centro de Serviços Compartilhados: escala o atendimento de múltiplas áreas sem perder qualidade.',
+      description: 'Gestão centralizada de solicitações.',
       metrics: [
         {
           value: '+40',
-          label: 'DE GANHO EM',
-          sublabel: 'CAPACIDADE'
-        },
-        {
-          value: '+30',
-          label: 'DE GANHO EM',
-          sublabel: 'PRODUTIVIDADE'
-        }
-      ]
-    },
-    {
-      id: 'equipes-compartilhadas',
-      company: 'Equipes compartilhadas',
-      logo: 'logo.png',
-      image: 'logo.png',
-      description: 'Várias equipes atendendo com contexto comum e histórico unificado de cada chamado.',
-      metrics: [
-        {
-          value: '+30',
           label: 'DE GANHO EM',
           sublabel: 'PRODUTIVIDADE'
         },
         {
           value: '-25',
-          label: 'NO TEMPO DE',
-          sublabel: 'TRANSFERÊNCIA'
+          label: 'NO RETRABALHO',
+          sublabel: 'DE SOLICITAÇÕES'
         }
       ]
     }

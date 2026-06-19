@@ -10,7 +10,7 @@
 
 .faq {
   padding: 100px 0;
-  background: #ffffff;
+  background: #070b14;
 
   .section-header {
     text-align: center;
@@ -21,13 +21,13 @@
     font-size: 44px;
     font-weight: 800;
     letter-spacing: -0.02em;
-    color: #1a2332;
+    color: #eef3fb;
     margin-bottom: 16px;
   }
 
   .section-subtitle {
     font-size: 18px;
-    color: #6b7280;
+    color: #9fb0c7;
     max-width: 620px;
     margin: 0 auto;
     line-height: 1.6;
@@ -41,19 +41,19 @@
 }
 
 .faq-item {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+  background: #0f1830;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   overflow: hidden;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    border-color: rgba(109, 94, 252, 0.4);
+    border-color: rgba(43, 140, 255, 0.5);
   }
 
   &.open {
-    border-color: #6d5efc;
-    box-shadow: 0 8px 32px rgba(109, 94, 252, 0.12);
+    border-color: #3da9ff;
+    box-shadow: 0 8px 32px rgba(43, 140, 255, 0.25), 0 0 20px rgba(43, 140, 255, 0.2);
   }
 }
 
@@ -73,7 +73,7 @@
   .faq-q-text {
     font-size: 18px;
     font-weight: 600;
-    color: #1a2332;
+    color: #eef3fb;
     line-height: 1.4;
   }
 }
@@ -92,7 +92,7 @@
     left: 50%;
     width: 14px;
     height: 2px;
-    background: #6d5efc;
+    background: #5cd6ff;
     border-radius: 2px;
     transform: translate(-50%, -50%);
     transition: transform 0.3s ease;
@@ -115,7 +115,7 @@
 
   p {
     padding: 0 28px 26px;
-    color: #4b5563;
+    color: #9fb0c7;
     font-size: 16px;
     line-height: 1.7;
     margin: 0;

@@ -1,6 +1,6 @@
 .features {
   padding: 100px 0 120px;
-  background: #0a0a0a;
+  background: #070b14;
   position: relative;
   overflow: hidden;
   margin-top: -1px; // Remove gap between sections
@@ -12,7 +12,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(109, 94, 252, 0.08) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(43, 140, 255, 0.10) 0%, transparent 50%);
     pointer-events: none;
   }
 
@@ -28,7 +28,7 @@
     font-size: 48px;
     font-weight: 800;
     margin-bottom: 16px;
-    background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
+    background: linear-gradient(135deg, #1e6bff 0%, #36c6ff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -37,7 +37,7 @@
 
   .section-subtitle {
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.7);
+    color: #9fb0c7;
     font-weight: 400;
     line-height: 1.6;
   }
@@ -61,7 +61,7 @@
   }
 
   .feature-card {
-    background: rgba(255, 255, 255, 0.03);
+    background: #0f1830;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
@@ -80,7 +80,7 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, #6d5efc 0%, #5a4ad9 100%);
+      background: linear-gradient(90deg, #1e6bff 0%, #36c6ff 100%);
       opacity: 0;
       transition: opacity 0.4s ease;
     }
@@ -89,18 +89,18 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 50% 0%, rgba(109, 94, 252, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle at 50% 0%, rgba(43, 140, 255, 0.12) 0%, transparent 70%);
       opacity: 0;
       transition: opacity 0.4s ease;
     }
 
     &:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(109, 94, 252, 0.25);
+      background: #111d3a;
+      border-color: #2b8cff;
       transform: translateY(-6px);
       box-shadow:
-        0 12px 32px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(109, 94, 252, 0.1);
+        0 18px 40px rgba(43, 140, 255, 0.12),
+        0 0 0 1px rgba(43, 140, 255, 0.25);
 
       &::before,
       &::after {
@@ -124,7 +124,7 @@
     margin-bottom: 20px;
     display: inline-block;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: drop-shadow(0 2px 12px rgba(109, 94, 252, 0.2));
+    filter: drop-shadow(0 2px 12px rgba(43, 140, 255, 0.3));
     position: relative;
     z-index: 1;
   }
@@ -132,7 +132,7 @@
   .feature-title {
     font-size: 20px;
     font-weight: 700;
-    color: #ffffff;
+    color: #eef3fb;
     margin-bottom: 10px;
     line-height: 1.3;
     position: relative;
@@ -141,7 +141,7 @@
 
   .feature-description {
     font-size: 15px;
-    color: rgba(255, 255, 255, 0.65);
+    color: #9fb0c7;
     line-height: 1.7;
     margin: 0;
     position: relative;
