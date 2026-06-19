@@ -19,28 +19,28 @@ export class SentimentAnalysis implements OnInit, OnDestroy {
   messages: SentimentMessage[] = [
     {
       id: 1,
-      text: 'Adorei o atendimento! Muito rápido e eficiente 😊',
+      text: 'Sistema de faturamento fora do ar, equipe inteira parada',
       sentiment: 'positive',
       score: 95,
       visible: false
     },
     {
       id: 2,
-      text: 'O produto chegou no prazo',
+      text: 'Solicitação de acesso a uma nova pasta compartilhada',
       sentiment: 'neutral',
       score: 60,
       visible: false
     },
     {
       id: 3,
-      text: 'Estou muito insatisfeito com a demora no atendimento',
+      text: 'Dúvida sobre como alterar a foto do perfil interno',
       sentiment: 'negative',
       score: 15,
       visible: false
     },
     {
       id: 4,
-      text: 'Excelente experiência! Recomendo muito!',
+      text: 'Falha de login impedindo toda a equipe de bater ponto',
       sentiment: 'positive',
       score: 98,
       visible: false

@@ -26,18 +26,18 @@ interface KanbanCard {
 export class ChatDemo implements OnInit, OnDestroy, AfterViewChecked {
   @ViewChild('chatMessages') private chatMessagesContainer?: ElementRef;
   messages: Message[] = [
-    { id: 1, text: 'Olá! Preciso de ajuda com meu pedido', sender: 'user', visible: false },
-    { id: 2, text: 'Olá! Claro, vou te ajudar agora mesmo. Qual o número do seu pedido?', sender: 'bot', visible: false },
-    { id: 3, text: 'É o pedido #9847', sender: 'user', visible: false },
-    { id: 4, text: 'Encontrei seu pedido! Ele está em rota de entrega e deve chegar hoje até as 18h. Deseja mais alguma informação?', sender: 'bot', visible: false },
-    { id: 5, text: 'Perfeito! Muito obrigado pelo atendimento rápido 😊', sender: 'user', visible: false },
-    { id: 6, text: 'Por nada! Estou sempre aqui para ajudar. Tenha um ótimo dia! 🚀', sender: 'bot', visible: false }
+    { id: 1, text: 'Não consigo acessar meu e-mail, aparece "senha incorreta" desde hoje cedo.', sender: 'user', visible: false },
+    { id: 2, text: 'Resumo do chamado #1842: acesso ao e-mail bloqueado após várias tentativas. Sugestão: redefinir a senha e liberar o bloqueio no Active Directory. Deseja aplicar essa solução?', sender: 'bot', visible: false },
+    { id: 3, text: 'Sim, pode aplicar. Já tentei reiniciar e não resolveu.', sender: 'user', visible: false },
+    { id: 4, text: 'Bloqueio removido e senha temporária enviada para o seu ramal. Acesse com ela e cadastre uma nova senha. Conseguiu entrar?', sender: 'bot', visible: false },
+    { id: 5, text: 'Funcionou, já estou com o e-mail aberto. Obrigado pela agilidade!', sender: 'user', visible: false },
+    { id: 6, text: 'Ótimo! Vou marcar o chamado como resolvido. Qualquer novo problema, é só abrir um chamado.', sender: 'bot', visible: false }
   ];
 
   kanbanCards: KanbanCard[] = [
-    { id: 1, title: 'Pedido #9847', customer: 'Cliente', category: 'Suporte', column: 'new' },
-    { id: 2, title: 'Produto não chegou', customer: 'Maria S.', category: 'Entrega', column: 'new' },
-    { id: 3, title: 'Dúvida sobre pagamento', customer: 'João P.', category: 'Financeiro', column: 'new' }
+    { id: 1, title: 'Acesso ao e-mail bloqueado', customer: 'Carlos M.', category: 'Acessos', column: 'new' },
+    { id: 2, title: 'Erro ao emitir nota no ERP', customer: 'Maria S.', category: 'Sistemas', column: 'new' },
+    { id: 3, title: 'Solicitação de novo notebook', customer: 'João P.', category: 'Infraestrutura', column: 'new' }
   ];
 
   currentMessageIndex = 0;

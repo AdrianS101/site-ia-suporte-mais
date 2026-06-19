@@ -27,7 +27,7 @@ interface Customer {
 export class Campaigns implements OnInit, OnDestroy {
   campaign: Campaign = {
     id: 1,
-    name: 'Promoção Black Friday',
+    name: 'Fila de Suporte',
     sent: 0,
     total: 1000,
     status: 'preparing'
@@ -37,7 +37,7 @@ export class Campaigns implements OnInit, OnDestroy {
     {
       id: 1,
       name: 'João Silva',
-      message: 'Olá! Vi a promoção, como funciona?',
+      message: 'Não consigo acessar o sistema, dá erro de login.',
       status: 'waiting',
       visible: false,
       agentIcon: '👋'
@@ -45,7 +45,7 @@ export class Campaigns implements OnInit, OnDestroy {
     {
       id: 2,
       name: 'Maria Santos',
-      message: 'Quero saber mais sobre o desconto',
+      message: 'Minha impressora parou de funcionar na rede.',
       status: 'waiting',
       visible: false,
       agentIcon: '💼'
@@ -53,7 +53,7 @@ export class Campaigns implements OnInit, OnDestroy {
     {
       id: 3,
       name: 'Pedro Costa',
-      message: 'Qual o prazo de entrega?',
+      message: 'Preciso de acesso à pasta compartilhada.',
       status: 'waiting',
       visible: false,
       agentIcon: '🛠️'
@@ -61,10 +61,10 @@ export class Campaigns implements OnInit, OnDestroy {
     {
       id: 4,
       name: 'Ana Lima',
-      message: 'Gostaria de fazer um pedido',
+      message: 'O e-mail corporativo não está sincronizando.',
       status: 'waiting',
       visible: false,
-      agentIcon: '💰'
+      agentIcon: '💻'
     }
   ];
 
@@ -168,10 +168,10 @@ export class Campaigns implements OnInit, OnDestroy {
 
   getStatusLabel(status: string): string {
     switch(status) {
-      case 'waiting': return 'Aguardando';
-      case 'responding': return 'Respondendo';
-      case 'completed': return 'Finalizado';
-      default: return 'Aguardando';
+      case 'waiting': return 'Na fila';
+      case 'responding': return 'Em atendimento';
+      case 'completed': return 'Resolvido';
+      default: return 'Na fila';
     }
   }
 

@@ -37,6 +37,23 @@
     object-fit: contain;
   }
 
+  .logo .logo-text {
+    font-family: 'Sora', 'Inter', -apple-system, sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+
+    .logo-plus {
+      color: #6d5efc;
+      margin-left: 1px;
+    }
+  }
+
   .nav {
     display: flex;
     gap: 32px;
@@ -205,6 +222,10 @@
     .logo img {
       height: 32px;
       max-width: 120px;
+    }
+
+    .logo .logo-text {
+      font-size: 20px;
     }
 
   } /* fim do .header */

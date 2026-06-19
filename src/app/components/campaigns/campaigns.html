@@ -2,26 +2,26 @@
   <div class="container">
     <div class="content">
       <div class="text-content">
-        <span class="label">Campanhas em Massa</span>
-        <h2>Automatize Conversas em Escala</h2>
+        <span class="label">Atendimento em Volume</span>
+        <h2>Atendimento em Escala, Sem Perder Contexto</h2>
         <p class="description">
-          Com a tecnologia IA ATENDE MAIS, você automatiza conversas em escala —
-          sem perder o toque humano. Nosso sistema de IA é capaz de responder
-          milhares de mensagens simultaneamente, garantindo agilidade,
-          consistência e experiência personalizada em cada atendimento. Ideal
-          para campanhas em massa, suporte ou pré-vendas, ajudando sua equipe a
-          focar no que realmente importa: fechar negócios.
+          Com a tecnologia IA Suporte+, sua equipe centraliza e resolve muitos
+          chamados ao mesmo tempo, sem perder qualidade. A IA organiza cada
+          solicitação, resume o contexto e apoia o atendente, garantindo
+          agilidade, padronização e respostas consistentes em todo o
+          atendimento. Ideal para centrais de suporte e service desk, ajudando
+          o time a focar no que realmente importa: resolver o problema.
         </p>
 
         <div class="stats-grid">
           <div class="stat-box">
             <div class="stat-number">2000+</div>
-            <div class="stat-label">Atendimentos simultâneos</div>
+            <div class="stat-label">Chamados simultâneos</div>
           </div>
 
           <div class="stat-box">
             <div class="stat-number">95%</div>
-            <div class="stat-label">Taxa de resposta</div>
+            <div class="stat-label">Taxa de resolução</div>
           </div>
 
           <div class="stat-box">
@@ -47,7 +47,7 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <span>Envio massivo automatizado</span>
+            <span>Todos os chamados centralizados num só lugar</span>
           </div>
           <div class="feature-item">
             <svg
@@ -65,7 +65,7 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <span>Time de agentes responde simultaneamente</span>
+            <span>Resumo automático de cada atendimento</span>
           </div>
           <div class="feature-item">
             <svg
@@ -83,7 +83,7 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <span>Personalização automática de mensagens</span>
+            <span>Respostas padronizadas com base de conhecimento por IA</span>
           </div>
           <div class="feature-item">
             <svg
@@ -101,7 +101,7 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <span>Métricas e relatórios em tempo real</span>
+            <span>Métricas e SLA em tempo real</span>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@
                     campaign.status === "preparing"
                       ? "Preparando"
                       : campaign.status === "sending"
-                        ? "Enviando"
+                        ? "Atendendo"
                         : "Concluído"
                   }}
                 </span>
@@ -134,7 +134,7 @@
           <!-- Progress Bar -->
           <div class="progress-section">
             <div class="progress-info">
-              <span class="progress-label">Mensagens enviadas</span>
+              <span class="progress-label">Chamados atendidos</span>
               <span class="progress-numbers"
                 >{{ campaign.sent }} / {{ campaign.total }}</span
               >
@@ -147,7 +147,7 @@
           <!-- Customer Responses -->
           <div class="responses-section">
             <div class="responses-header">
-              <h4>Respostas em Tempo Real</h4>
+              <h4>Chamados em Tempo Real</h4>
               <span class="responses-count"
                 >{{ getVisibleCustomersCount() }} atendimentos ativos</span
               >

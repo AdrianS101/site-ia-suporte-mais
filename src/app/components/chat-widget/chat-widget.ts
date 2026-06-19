@@ -161,7 +161,7 @@ export class ChatWidget implements OnInit, AfterViewChecked {
         this.isSubmittingContact = false;
         this.showContactForm = false;
         this.addAgentMessage(
-          'Olá! Bem-vindo ao chat da IA ATENDE MAIS. Como posso ajudar você hoje?',
+          'Olá! Bem-vindo ao chat da IA Suporte+. Como posso ajudar você hoje?',
         );
       },
     });

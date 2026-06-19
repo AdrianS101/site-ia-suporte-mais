@@ -34,6 +34,22 @@
   }
 
   &-brand {
+    .footer-logo-text {
+      font-family: 'Sora', 'Inter', -apple-system, sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+
+      .logo-plus {
+        color: #6d5efc;
+        margin-left: 1px;
+      }
+    }
+
     p {
       color: rgba(255, 255, 255, 0.6);
       margin-top: 20px;

@@ -2,13 +2,13 @@
   <div class="container">
     <div class="content">
       <div class="text-content">
-        <span class="label">Inteligência Emocional</span>
-        <h2>Análise de Sentimento em Tempo Real</h2>
+        <span class="label">Triagem Automática</span>
+        <h2>Priorização Inteligente de Chamados</h2>
         <p class="description">
-          A IA ATENDE MAIS analisa automaticamente o sentimento de cada
-          mensagem, identificando emoções positivas, neutras ou negativas. Isso
-          permite que sua equipe priorize atendimentos críticos e responda de
-          forma mais empática.
+          A IA Suporte+ classifica cada chamado por urgência e criticidade no
+          momento em que ele chega, separando o que é crítico do que pode
+          esperar. Assim sua equipe atua primeiro no que mais impacta a
+          operação, sem perder tempo na triagem manual.
         </p>
 
         <div class="stats-grid">
@@ -16,7 +16,7 @@
             <div class="stat-icon">😊</div>
             <div class="stat-info">
               <div class="stat-value">{{ stats.positive }}%</div>
-              <div class="stat-label">Positivos</div>
+              <div class="stat-label">Crítico</div>
             </div>
           </div>
 
@@ -24,7 +24,7 @@
             <div class="stat-icon">😐</div>
             <div class="stat-info">
               <div class="stat-value">{{ stats.neutral }}%</div>
-              <div class="stat-label">Neutros</div>
+              <div class="stat-label">Médio</div>
             </div>
           </div>
 
@@ -32,7 +32,7 @@
             <div class="stat-icon">😟</div>
             <div class="stat-info">
               <div class="stat-value">{{ stats.negative }}%</div>
-              <div class="stat-label">Negativos</div>
+              <div class="stat-label">Baixo</div>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@
                 stroke-linejoin="round"
               />
             </svg>
-            <span>Insights sobre satisfação do cliente</span>
+            <span>Insights de SLA e satisfação dos usuários internos</span>
           </div>
         </div>
       </div>
@@ -98,8 +98,8 @@
       <div class="demo-content">
         <div class="messages-container">
           <div class="messages-header">
-            <h3>Análise em Tempo Real</h3>
-            <span class="badge">IA ATENDE MAIS</span>
+            <h3>Triagem em Tempo Real</h3>
+            <span class="badge">IA Suporte+</span>
           </div>
 
           <div class="messages-list">
@@ -124,10 +124,10 @@
                   <span class="sentiment-label">
                     {{
                       message.sentiment === "positive"
-                        ? "Positivo"
+                        ? "Crítico"
                         : message.sentiment === "neutral"
-                          ? "Neutro"
-                          : "Negativo"
+                          ? "Médio"
+                          : "Baixo"
                     }}
                   </span>
                 </div>

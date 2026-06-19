@@ -26,14 +26,15 @@
           <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
           <line x1="12" y1="22.08" x2="12" y2="12"></line>
         </svg>
-        Automação de Workflows
+        Automação de Chamados
       </div>
       <h2 id="workflow-title" class="section-title">
-        Fluxos de Automação Visuais
+        Fluxos Visuais de Atendimento
       </h2>
       <p class="section-subtitle">
-        Construa workflows complexos arrastando e conectando nós. Automatize
-        processos inteiros de vendas, atendimento e gestão.
+        Construa fluxos de atendimento arrastando e conectando etapas.
+        Automatize a triagem, a categorização e o encaminhamento de chamados ao
+        time certo.
       </p>
     </header>
 
@@ -41,7 +42,7 @@
       <!-- Workflow Canvas -->
       <div class="workflow-canvas">
         <div class="workflow-header">
-          <span class="workflow-name">Fluxo de Conversão</span>
+          <span class="workflow-name">Fluxo de Atendimento</span>
           <span class="workflow-status active">
             <span class="status-dot"></span>
             Ativo
@@ -51,7 +52,7 @@
         <div class="flow-builder">
           <!-- Flow Nodes -->
           <div class="flow-nodes">
-            <!-- Node 1: Landing Page -->
+            <!-- Node 1: Chamado aberto -->
             <div class="flow-node" style="left: 20px; top: 50px">
               <div class="node-header blue">
                 <div class="node-icon-small">
@@ -75,11 +76,11 @@
                     <line x1="9" y1="15" x2="15" y2="15"></line>
                   </svg>
                 </div>
-                <h4 class="node-title-small">Landing Page</h4>
+                <h4 class="node-title-small">Chamado Aberto</h4>
               </div>
               <div class="node-body">
-                <p class="node-label">Trigger</p>
-                <p class="node-value">form_submit</p>
+                <p class="node-label">Gatilho</p>
+                <p class="node-value">novo_chamado</p>
               </div>
               <!-- Connection point right -->
               <div class="connection-point right"></div>
@@ -93,7 +94,7 @@
               <div class="connection-line gradient-blue-purple"></div>
             </div>
 
-            <!-- Node 2: Webhook -->
+            <!-- Node 2: Triagem IA -->
             <div class="flow-node" style="left: 280px; top: 50px">
               <div class="node-header purple">
                 <div class="node-icon-small">
@@ -113,11 +114,11 @@
                     ></path>
                   </svg>
                 </div>
-                <h4 class="node-title-small">Webhook</h4>
+                <h4 class="node-title-small">Triagem IA</h4>
               </div>
               <div class="node-body">
-                <p class="node-label">Endpoint</p>
-                <p class="node-value">/api/webhook/lead</p>
+                <p class="node-label">Ação</p>
+                <p class="node-value">resumo + contexto</p>
               </div>
               <!-- Connection points -->
               <div class="connection-point left"></div>
@@ -132,7 +133,7 @@
               <div class="connection-line gradient-purple-cyan"></div>
             </div>
 
-            <!-- Node 3: Create Lead -->
+            <!-- Node 3: Categorização + Prioridade -->
             <div class="flow-node" style="left: 540px; top: 50px">
               <div class="node-header cyan">
                 <div class="node-icon-small">
@@ -150,11 +151,11 @@
                     <line x1="23" y1="11" x2="17" y2="11"></line>
                   </svg>
                 </div>
-                <h4 class="node-title-small">Criar Lead</h4>
+                <h4 class="node-title-small">Categorizar</h4>
               </div>
               <div class="node-body">
-                <p class="node-label">Campos</p>
-                <p class="node-value">nome, email, telefone</p>
+                <p class="node-label">Define</p>
+                <p class="node-value">categoria, prioridade, SLA</p>
               </div>
               <!-- Connection points -->
               <div class="connection-point left"></div>
@@ -169,7 +170,7 @@
               <div class="connection-line gradient-cyan-green"></div>
             </div>
 
-            <!-- Node 4: AI Response -->
+            <!-- Node 4: Encaminhamento -->
             <div class="flow-node" style="left: 800px; top: 50px">
               <div class="node-header green">
                 <div class="node-icon-small">
@@ -186,11 +187,11 @@
                     ></path>
                   </svg>
                 </div>
-                <h4 class="node-title-small">Resposta IA</h4>
+                <h4 class="node-title-small">Encaminhar</h4>
               </div>
               <div class="node-body">
-                <p class="node-label">Agente</p>
-                <p class="node-value">Vendas Corporativas</p>
+                <p class="node-label">Time</p>
+                <p class="node-value">Suporte de TI</p>
               </div>
               <!-- Connection point left -->
               <div class="connection-point left"></div>
@@ -215,9 +216,9 @@
             </svg>
           </div>
           <div class="feature-content">
-            <h4>Drag & Drop Visual</h4>
+            <h4>Construtor Visual</h4>
             <p>
-              Interface intuitiva para construir fluxos complexos sem código
+              Interface intuitiva para montar fluxos de atendimento sem código
             </p>
           </div>
         </div>
@@ -239,8 +240,7 @@
           <div class="feature-content">
             <h4>Execução em Tempo Real</h4>
             <p>
-              Workflows processados instantaneamente quando eventos são
-              disparados
+              Chamados triados e encaminhados no instante em que são abertos
             </p>
           </div>
         </div>
@@ -261,8 +261,8 @@
             </svg>
           </div>
           <div class="feature-content">
-            <h4>Integrações Ilimitadas</h4>
-            <p>Conecte com CRMs, ERPs, APIs e centenas de ferramentas</p>
+            <h4>Integrações com TI</h4>
+            <p>Conecte com ferramentas de ITSM, CRMs, ERPs e APIs</p>
           </div>
         </div>
 
@@ -283,7 +283,8 @@
           <div class="feature-content">
             <h4>Condições Inteligentes</h4>
             <p>
-              Adicione lógica condicional, loops e ramificações aos seus fluxos
+              Defina regras por SLA, prioridade e categoria para rotear cada
+              chamado
             </p>
           </div>
         </div>

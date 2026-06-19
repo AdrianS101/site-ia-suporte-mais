@@ -11,27 +11,27 @@ export class FollowUp {
   features = [
     {
       icon: 'bell',
-      title: 'Follow-up Automático',
-      description: 'Configure regras inteligentes de follow-up que mantêm seus leads engajados automaticamente, aumentando suas chances de conversão.',
-      color: '#48C1C4'
+      title: 'Alertas de Inatividade e SLA',
+      description: 'Monitore chamados parados e prazos em risco com alertas automáticos que evitam atrasos e estouro de SLA.',
+      color: '#6d5efc'
     },
     {
       icon: 'clock',
-      title: 'Regras Temporizadas',
-      description: 'Configure follow-ups automáticos baseados em tempo, condições específicas e comportamento do cliente.',
-      color: '#48C1C4'
+      title: 'Lembretes Inteligentes',
+      description: 'Agende lembretes e cobranças automáticas com base no tempo, na prioridade e no status de cada chamado.',
+      color: '#6d5efc'
     },
     {
       icon: 'brain',
-      title: 'IA Inteligente',
-      description: 'Mensagens personalizadas que se adaptam ao contexto da conversa e histórico do cliente.',
-      color: '#48C1C4'
+      title: 'Escalonamento Automático',
+      description: 'A IA decide quando escalar o chamado para o nível seguinte, considerando o contexto e o histórico da solicitação.',
+      color: '#6d5efc'
     },
     {
       icon: 'chart',
-      title: 'Aumento de Conversão',
-      description: 'Follow-ups estratégicos que aumentam em até 300% as taxas de resposta e conversão.',
-      color: '#48C1C4'
+      title: 'Analytics de Resolução',
+      description: 'Acompanhe tempo de resolução, taxas de reabertura e cumprimento de SLA para melhorar continuamente o suporte.',
+      color: '#6d5efc'
     }
   ];
 

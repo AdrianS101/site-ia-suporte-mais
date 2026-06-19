@@ -29,8 +29,8 @@ export class AgentTeams implements OnInit, OnDestroy {
   agents: Agent[] = [
     {
       id: 1,
-      name: 'Agente Recepção',
-      role: 'Primeiro contato',
+      name: 'Triagem',
+      role: 'Abertura do chamado',
       icon: '👋',
       color: '#10b981',
       status: 'idle',
@@ -38,8 +38,8 @@ export class AgentTeams implements OnInit, OnDestroy {
     },
     {
       id: 2,
-      name: 'Agente Vendas',
-      role: 'Negociação',
+      name: 'Atendimento N1',
+      role: 'Primeiro nível',
       icon: '💼',
       color: '#3b82f6',
       status: 'idle',
@@ -47,7 +47,7 @@ export class AgentTeams implements OnInit, OnDestroy {
     },
     {
       id: 3,
-      name: 'Agente Suporte',
+      name: 'Suporte N2',
       role: 'Atendimento técnico',
       icon: '🛠️',
       color: '#8b5cf6',
@@ -56,8 +56,8 @@ export class AgentTeams implements OnInit, OnDestroy {
     },
     {
       id: 4,
-      name: 'Agente Financeiro',
-      role: 'Pagamentos',
+      name: 'Especialista',
+      role: 'Resolução final',
       icon: '💰',
       color: '#f59e0b',
       status: 'idle',
@@ -104,7 +104,7 @@ export class AgentTeams implements OnInit, OnDestroy {
         this.setAgentStatus(1, 'active');
         setTimeout(() => {
           this.setAgentStatus(1, 'completed');
-          this.addTask('Cliente identificado', 1, 2);
+          this.addTask('Chamado classificado', 1, 2);
         }, 1500);
         break;
 
@@ -113,7 +113,7 @@ export class AgentTeams implements OnInit, OnDestroy {
         this.setAgentStatus(2, 'active');
         setTimeout(() => {
           this.setAgentStatus(2, 'completed');
-          this.addTask('Proposta enviada', 2, 3);
+          this.addTask('Resposta inicial enviada', 2, 3);
         }, 1500);
         break;
 
@@ -122,7 +122,7 @@ export class AgentTeams implements OnInit, OnDestroy {
         this.setAgentStatus(3, 'active');
         setTimeout(() => {
           this.setAgentStatus(3, 'completed');
-          this.addTask('Suporte prestado', 3, 4);
+          this.addTask('Diagnóstico concluído', 3, 4);
         }, 1500);
         break;
 
@@ -131,7 +131,7 @@ export class AgentTeams implements OnInit, OnDestroy {
         this.setAgentStatus(4, 'active');
         setTimeout(() => {
           this.setAgentStatus(4, 'completed');
-          this.addTask('Pagamento confirmado', 4, 0);
+          this.addTask('Chamado resolvido', 4, 0);
 
           // Reset after completion
           setTimeout(() => {
@@ -172,10 +172,10 @@ export class AgentTeams implements OnInit, OnDestroy {
 
   getAgentPosition(agentId: number): { x: number, y: number } {
     const positions = [
-      { x: 15, y: 35 },  // Agent 1 - Recepção
-      { x: 38, y: 15 },  // Agent 2 - Vendas
-      { x: 62, y: 15 },  // Agent 3 - Suporte
-      { x: 85, y: 35 }   // Agent 4 - Financeiro
+      { x: 15, y: 35 },  // Agent 1 - Triagem
+      { x: 38, y: 15 },  // Agent 2 - Atendimento N1
+      { x: 62, y: 15 },  // Agent 3 - Suporte N2
+      { x: 85, y: 35 }   // Agent 4 - Especialista
     ];
     return positions[agentId - 1] || { x: 50, y: 50 };
   }

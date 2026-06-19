@@ -12,7 +12,7 @@
     transform: translate(-50%, -50%);
     width: 1000px;
     height: 1000px;
-    background: radial-gradient(circle, rgba(72, 193, 196, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(109, 94, 252, 0.06) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -34,16 +34,16 @@
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    background: rgba(72, 193, 196, 0.1);
-    border: 1px solid rgba(72, 193, 196, 0.2);
+    background: rgba(109, 94, 252, 0.1);
+    border: 1px solid rgba(109, 94, 252, 0.2);
     border-radius: 20px;
     font-size: 14px;
     font-weight: 600;
-    color: #48C1C4;
+    color: #6d5efc;
     margin-bottom: 20px;
 
     svg {
-      color: #48C1C4;
+      color: #6d5efc;
     }
   }
 
@@ -51,7 +51,7 @@
     font-size: 48px;
     font-weight: 800;
     margin-bottom: 16px;
-    background: linear-gradient(135deg, #48C1C4 0%, #3B9BA0 100%);
+    background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -97,9 +97,9 @@
       }
 
       &.active {
-        background: linear-gradient(135deg, #48C1C4 0%, #3B9BA0 100%);
+        background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
         color: #000000;
-        box-shadow: 0 4px 12px rgba(72, 193, 196, 0.3);
+        box-shadow: 0 4px 12px rgba(109, 94, 252, 0.3);
       }
 
       .discount-badge {
@@ -151,14 +151,14 @@
 
     &:hover {
       transform: translateY(-8px);
-      border-color: rgba(72, 193, 196, 0.4);
+      border-color: rgba(109, 94, 252, 0.4);
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     }
 
     &.featured {
-      border-color: #48C1C4;
-      background: rgba(72, 193, 196, 0.05);
-      box-shadow: 0 8px 32px rgba(72, 193, 196, 0.15);
+      border-color: #6d5efc;
+      background: rgba(109, 94, 252, 0.05);
+      box-shadow: 0 8px 32px rgba(109, 94, 252, 0.15);
       transform: scale(1.05);
 
       @media (max-width: 1200px) {
@@ -167,7 +167,7 @@
 
       &:hover {
         transform: translateY(-8px) scale(1.05);
-        box-shadow: 0 16px 48px rgba(72, 193, 196, 0.25);
+        box-shadow: 0 16px 48px rgba(109, 94, 252, 0.25);
 
         @media (max-width: 1200px) {
           transform: translateY(-8px) scale(1);
@@ -181,7 +181,7 @@
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #48C1C4 0%, #3B9BA0 100%);
+    background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
     color: #000000;
     padding: 6px 20px;
     border-radius: 20px;
@@ -189,7 +189,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 12px rgba(72, 193, 196, 0.4);
+    box-shadow: 0 4px 12px rgba(109, 94, 252, 0.4);
   }
 
   .plan-header {
@@ -214,13 +214,13 @@
     align-items: center;
     margin-bottom: 16px;
     padding: 12px;
-    background: rgba(72, 193, 196, 0.1);
+    background: rgba(109, 94, 252, 0.1);
     border-radius: 12px;
 
     .conversations-number {
       font-size: 36px;
       font-weight: 800;
-      color: #48C1C4;
+      color: #6d5efc;
       line-height: 1;
     }
 
@@ -248,7 +248,7 @@
     .amount {
       font-size: 48px;
       font-weight: 800;
-      background: linear-gradient(135deg, #48C1C4 0%, #3B9BA0 100%);
+      background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -267,7 +267,7 @@
     .custom-text {
       font-size: 32px;
       font-weight: 700;
-      background: linear-gradient(135deg, #48C1C4 0%, #3B9BA0 100%);
+      background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -320,7 +320,7 @@
     line-height: 1.5;
 
     svg {
-      color: #48C1C4;
+      color: #6d5efc;
       flex-shrink: 0;
       margin-top: 2px;
     }
@@ -350,14 +350,14 @@
     }
 
     &.featured-button {
-      background: linear-gradient(135deg, #48C1C4 0%, #3B9BA0 100%);
+      background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
       color: #000000;
       border: none;
-      box-shadow: 0 4px 20px rgba(72, 193, 196, 0.3);
+      box-shadow: 0 4px 20px rgba(109, 94, 252, 0.3);
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(72, 193, 196, 0.5);
+        box-shadow: 0 8px 30px rgba(109, 94, 252, 0.5);
       }
     }
   }

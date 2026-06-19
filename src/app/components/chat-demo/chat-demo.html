@@ -2,11 +2,11 @@
   <div class="container">
     <header class="section-header">
       <h2 id="chat-demo-title" class="section-title">
-        Atendimento Inteligente em Ação
+        Suporte Inteligente em Ação
       </h2>
       <p class="section-subtitle">
-        Veja como a IA ATENDE MAIS responde instantaneamente com precisão e
-        naturalidade
+        Veja como a IA Suporte+ resume cada chamado e sugere a resposta certa
+        ao atendente em segundos
       </p>
     </header>
 
@@ -15,7 +15,7 @@
       <div
         class="kanban-board"
         role="region"
-        aria-label="Quadro Kanban de atendimentos"
+        aria-label="Quadro Kanban de chamados"
       >
         <div class="kanban-header">
           <h3>
@@ -33,10 +33,10 @@
               <rect x="14" y="14" width="7" height="7"></rect>
               <rect x="3" y="14" width="7" height="7"></rect>
             </svg>
-            Nosso CRM
+            Central de Chamados
           </h3>
           <span class="kanban-count"
-            >{{ kanbanCards.length }} atendimentos</span
+            >{{ kanbanCards.length }} chamados</span
           >
         </div>
 
@@ -45,7 +45,7 @@
           <div class="kanban-column">
             <div class="column-header new">
               <span class="column-icon">📥</span>
-              <span class="column-title">Novos</span>
+              <span class="column-title">Abertos</span>
               <span class="column-count">{{
                 getCardsByColumn("new").length
               }}</span>
@@ -71,7 +71,7 @@
           <div class="kanban-column">
             <div class="column-header processing">
               <span class="column-icon">⚡</span>
-              <span class="column-title">Atendimento</span>
+              <span class="column-title">Em atendimento</span>
               <span class="column-count">{{
                 getCardsByColumn("processing").length
               }}</span>
@@ -133,7 +133,7 @@
                       >
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      Concluído
+                      Resolvido
                     </span>
                   </div>
                 </div>
@@ -153,13 +153,13 @@
         <div class="chat-window-header">
           <div class="chat-avatar-container">
             <div class="chat-avatar">
-              <img src="favicon.png" alt="Agente IA ATENDE MAIS" />
+              <img src="favicon.png" alt="Co-piloto IA Suporte+" />
             </div>
             <div class="status-indicator online"></div>
           </div>
           <div class="chat-header-info">
-            <h3 class="chat-agent-name">Agente IA ATENDE MAIS</h3>
-            <p class="chat-status">Online • Responde em segundos</p>
+            <h3 class="chat-agent-name">Co-piloto IA Suporte+</h3>
+            <p class="chat-status">Online • Assiste o atendente em tempo real</p>
           </div>
           <div class="chat-header-badge">
             <span class="ai-badge">

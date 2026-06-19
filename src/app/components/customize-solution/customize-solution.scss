@@ -12,7 +12,7 @@
     transform: translate(-50%, -50%);
     width: 800px;
     height: 800px;
-    background: radial-gradient(circle, rgba(72, 193, 196, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(109, 94, 252, 0.08) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -34,16 +34,16 @@
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    background: rgba(72, 193, 196, 0.1);
-    border: 1px solid rgba(72, 193, 196, 0.2);
+    background: rgba(109, 94, 252, 0.1);
+    border: 1px solid rgba(109, 94, 252, 0.2);
     border-radius: 20px;
     font-size: 14px;
     font-weight: 600;
-    color: #48C1C4;
+    color: #6d5efc;
     margin-bottom: 20px;
 
     svg {
-      color: #48C1C4;
+      color: #6d5efc;
     }
   }
 
@@ -51,7 +51,7 @@
     font-size: 48px;
     font-weight: 800;
     margin-bottom: 16px;
-    background: linear-gradient(135deg, #48C1C4 0%, #3B9BA0 100%);
+    background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -73,21 +73,21 @@
     justify-content: center;
     gap: 10px;
     padding: 12px 24px;
-    background: rgba(72, 193, 196, 0.15);
-    border: 1px solid rgba(72, 193, 196, 0.3);
+    background: rgba(109, 94, 252, 0.15);
+    border: 1px solid rgba(109, 94, 252, 0.3);
     border-radius: 24px;
     margin: 0 auto 40px;
     width: fit-content;
     animation: slideDown 0.3s ease-out;
 
     svg {
-      color: #48C1C4;
+      color: #6d5efc;
     }
 
     span {
       font-size: 16px;
       font-weight: 600;
-      color: #48C1C4;
+      color: #6d5efc;
     }
   }
 
@@ -130,7 +130,7 @@
 
     &:hover {
       transform: translateY(-4px);
-      border-color: rgba(72, 193, 196, 0.4);
+      border-color: rgba(109, 94, 252, 0.4);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 
       .option-icon {
@@ -139,13 +139,13 @@
     }
 
     &.selected {
-      border-color: #48C1C4;
-      background: rgba(72, 193, 196, 0.08);
-      box-shadow: 0 8px 32px rgba(72, 193, 196, 0.2);
+      border-color: #6d5efc;
+      background: rgba(109, 94, 252, 0.08);
+      box-shadow: 0 8px 32px rgba(109, 94, 252, 0.2);
 
       .option-checkbox {
-        background: #48C1C4;
-        border-color: #48C1C4;
+        background: #6d5efc;
+        border-color: #6d5efc;
 
         svg {
           opacity: 1;
@@ -154,11 +154,11 @@
       }
 
       .option-icon {
-        color: #48C1C4;
+        color: #6d5efc;
       }
 
       .option-category {
-        color: #48C1C4;
+        color: #6d5efc;
       }
     }
 
@@ -236,8 +236,8 @@
   .cta-customize {
     text-align: center;
     padding: 48px 40px;
-    background: rgba(72, 193, 196, 0.05);
-    border: 1px solid rgba(72, 193, 196, 0.15);
+    background: rgba(109, 94, 252, 0.05);
+    border: 1px solid rgba(109, 94, 252, 0.15);
     border-radius: 24px;
     animation: fadeInUp 0.6s ease-out backwards;
     animation-delay: 0.4s;
@@ -258,18 +258,18 @@
     .btn-primary {
       display: inline-block;
       padding: 14px 32px;
-      background: linear-gradient(135deg, #48C1C4 0%, #3B9BA0 100%);
+      background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
       color: #000000;
       font-weight: 700;
       font-size: 16px;
       border-radius: 12px;
       text-decoration: none;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(72, 193, 196, 0.3);
+      box-shadow: 0 4px 20px rgba(109, 94, 252, 0.3);
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(72, 193, 196, 0.5);
+        box-shadow: 0 8px 30px rgba(109, 94, 252, 0.5);
       }
     }
   }
@@ -279,7 +279,7 @@
     margin-top: 60px;
     padding: 48px;
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(72, 193, 196, 0.2);
+    border: 1px solid rgba(109, 94, 252, 0.2);
     border-radius: 24px;
     backdrop-filter: blur(10px);
   }
@@ -329,7 +329,7 @@
         color: rgba(255, 255, 255, 0.9);
 
         svg {
-          color: #48C1C4;
+          color: #6d5efc;
         }
       }
 
@@ -345,7 +345,7 @@
 
         &:focus {
           outline: none;
-          border-color: #48C1C4;
+          border-color: #6d5efc;
           background: rgba(255, 255, 255, 0.08);
         }
 
@@ -376,13 +376,13 @@
       padding: 18px 40px;
       font-size: 18px;
       font-weight: 700;
-      background: linear-gradient(135deg, #48C1C4 0%, #3B9BA0 100%);
+      background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
       color: #000000;
       border: none;
       border-radius: 16px;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 32px rgba(72, 193, 196, 0.4);
+      box-shadow: 0 8px 32px rgba(109, 94, 252, 0.4);
       position: relative;
       overflow: hidden;
 
@@ -399,7 +399,7 @@
 
       &:hover {
         transform: translateY(-3px);
-        box-shadow: 0 12px 40px rgba(72, 193, 196, 0.6);
+        box-shadow: 0 12px 40px rgba(109, 94, 252, 0.6);
 
         &::before {
           left: 100%;
@@ -475,7 +475,7 @@
 
 .modal-content {
   background: linear-gradient(135deg, rgba(27, 39, 53, 0.98) 0%, rgba(13, 17, 23, 0.98) 100%);
-  border: 1px solid rgba(72, 193, 196, 0.3);
+  border: 1px solid rgba(109, 94, 252, 0.3);
   border-radius: 24px;
   padding: 48px;
   max-width: 500px;
@@ -526,15 +526,15 @@
     width: 64px;
     height: 64px;
     margin: 0 auto 20px;
-    background: rgba(72, 193, 196, 0.15);
-    border: 2px solid rgba(72, 193, 196, 0.3);
+    background: rgba(109, 94, 252, 0.15);
+    border: 2px solid rgba(109, 94, 252, 0.3);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 
     svg {
-      color: #48C1C4;
+      color: #6d5efc;
     }
   }
 
@@ -576,7 +576,7 @@
 
       &:focus {
         outline: none;
-        border-color: #48C1C4;
+        border-color: #6d5efc;
         background: rgba(255, 255, 255, 0.08);
       }
 
@@ -621,9 +621,9 @@
       }
 
       &.btn-primary {
-        background: linear-gradient(135deg, #48C1C4 0%, #3B9BA0 100%);
+        background: linear-gradient(135deg, #6d5efc 0%, #5a4ad9 100%);
         color: #000000;
-        box-shadow: 0 4px 20px rgba(72, 193, 196, 0.3);
+        box-shadow: 0 4px 20px rgba(109, 94, 252, 0.3);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -632,7 +632,7 @@
 
         &:hover:not(:disabled) {
           transform: translateY(-2px);
-          box-shadow: 0 6px 25px rgba(72, 193, 196, 0.5);
+          box-shadow: 0 6px 25px rgba(109, 94, 252, 0.5);
         }
 
         &:disabled {

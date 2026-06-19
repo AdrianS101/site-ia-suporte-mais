@@ -25,35 +25,154 @@ export class SuccessCases {
 
   cases: SuccessCase[] = [
     {
-      id: 'bahamas-cred',
-      company: 'Bahamas Cred',
-      logo: 'bahamas-logo.png',
-      image: 'bahamas-case.png',
-      description: 'Ao adotar as soluções da Smart NX, a Bahamas Cred elevou seu padrão de atendimento, conquistando resultados surpreendentes:',
+      id: 'suporte-ti',
+      company: 'Suporte de TI',
+      logo: 'logo.png',
+      image: 'logo.png',
+      description: 'Abertura, triagem e resolução de chamados técnicos com contexto completo e respostas sugeridas pela IA.',
       metrics: [
         {
-          value: '+20',
-          label: '% DE REDUÇÃO',
-          sublabel: 'EM CUSTOS OPERACIONAIS'
+          value: '-40',
+          label: 'NO TEMPO',
+          sublabel: 'DE RESOLUÇÃO'
         },
         {
-          value: '+35',
-          label: '% EM AUMENTO DA',
-          sublabel: 'EFICIÊNCIA DO ATENDIMENTO'
+          value: '+30',
+          label: 'DE GANHO EM',
+          sublabel: 'PRODUTIVIDADE'
         }
       ]
     },
     {
-      id: 'grupo-dpsp',
-      company: 'Balconi',
-      logo: 'dpsp-logo.png',
-      image: 'dpsp-case.png',
-      description: 'Com as soluções inteligentes implementadas, o Grupo DPSP transformou seu atendimento:',
+      id: 'rh',
+      company: 'RH',
+      logo: 'logo.png',
+      image: 'logo.png',
+      description: 'Centraliza as solicitações dos colaboradores (benefícios, documentos e dúvidas) e responde com mais agilidade.',
       metrics: [
         {
-          value: '5',
-          label: 'PARA 1 MINUTO',
-          sublabel: 'DE ATENDIMENTO'
+          value: '+35',
+          label: 'DE GANHO EM',
+          sublabel: 'AGILIDADE'
+        },
+        {
+          value: '-25',
+          label: 'NO RETRABALHO',
+          sublabel: 'DE SOLICITAÇÕES'
+        }
+      ]
+    },
+    {
+      id: 'facilities',
+      company: 'Facilities',
+      logo: 'logo.png',
+      image: 'logo.png',
+      description: 'Organiza pedidos de manutenção, infraestrutura e serviços prediais em um fluxo único e rastreável.',
+      metrics: [
+        {
+          value: '-30',
+          label: 'NO TEMPO DE',
+          sublabel: 'ATENDIMENTO'
+        },
+        {
+          value: '+20',
+          label: 'DE GANHO EM',
+          sublabel: 'ORGANIZAÇÃO'
+        }
+      ]
+    },
+    {
+      id: 'atendimento-interno',
+      company: 'Atendimento interno',
+      logo: 'logo.png',
+      image: 'logo.png',
+      description: 'Um único canal inteligente para concentrar e responder todas as demandas internas da empresa.',
+      metrics: [
+        {
+          value: '+40',
+          label: 'DE GANHO EM',
+          sublabel: 'PRODUTIVIDADE'
+        },
+        {
+          value: '-30',
+          label: 'NO TEMPO DE',
+          sublabel: 'PRIMEIRA RESPOSTA'
+        }
+      ]
+    },
+    {
+      id: 'operacoes',
+      company: 'Operações',
+      logo: 'logo.png',
+      image: 'logo.png',
+      description: 'Acompanha o SLA, prioriza o que é crítico e reduz o tempo de resposta das equipes operacionais.',
+      metrics: [
+        {
+          value: '+95',
+          label: 'DE SLA',
+          sublabel: 'CUMPRIDO'
+        },
+        {
+          value: '-35',
+          label: 'NO TEMPO',
+          sublabel: 'DE RESPOSTA'
+        }
+      ]
+    },
+    {
+      id: 'service-desk',
+      company: 'Service Desk',
+      logo: 'logo.png',
+      image: 'logo.png',
+      description: 'Padroniza o atendimento e acelera a resolução de chamados com o apoio da IA em cada etapa.',
+      metrics: [
+        {
+          value: '-40',
+          label: 'NO TEMPO',
+          sublabel: 'DE RESOLUÇÃO'
+        },
+        {
+          value: '+30',
+          label: 'DE GANHO EM',
+          sublabel: 'PADRONIZAÇÃO'
+        }
+      ]
+    },
+    {
+      id: 'csc',
+      company: 'CSC',
+      logo: 'logo.png',
+      image: 'logo.png',
+      description: 'Centro de Serviços Compartilhados: escala o atendimento de múltiplas áreas sem perder qualidade.',
+      metrics: [
+        {
+          value: '+40',
+          label: 'DE GANHO EM',
+          sublabel: 'CAPACIDADE'
+        },
+        {
+          value: '+30',
+          label: 'DE GANHO EM',
+          sublabel: 'PRODUTIVIDADE'
+        }
+      ]
+    },
+    {
+      id: 'equipes-compartilhadas',
+      company: 'Equipes compartilhadas',
+      logo: 'logo.png',
+      image: 'logo.png',
+      description: 'Várias equipes atendendo com contexto comum e histórico unificado de cada chamado.',
+      metrics: [
+        {
+          value: '+30',
+          label: 'DE GANHO EM',
+          sublabel: 'PRODUTIVIDADE'
+        },
+        {
+          value: '-25',
+          label: 'NO TEMPO DE',
+          sublabel: 'TRANSFERÊNCIA'
         }
       ]
     }
